@@ -3,22 +3,62 @@
 Del 6 de agosto de 4 de octubre de 2019
 ```
 
-1. Introducción
+1. **Introducción**
 
-   1. ¿Qué es LaTeX?
-   2. Editores de LaTeX
+   * ¿Qué es LaTeX?
+   * Compiladores de LaTeX
 
-2. Formato básico de un documento
+   * Editores de LaTeX
 
-   1. Formato de texto
-      1. Tipos de documentos (Books, Article,Report, Letter, etc.); Sections, Chapters, Parts, etc.
-   2. Listas
-   3. Caracteres especiales
-   4. Saltos de línea y página
-   5. Títulos, capítulos y secciones
-   6. Imágenes
+2. **Formato básico de un documento**
 
-   ## New
+   * Formato de texto
+   
+   * Tipos de documentos (Books, Article,Report, Letter, etc.); Sections, Chapters, Parts, etc.
+   * Listas
+   * Caracteres especiales
+   * Saltos de línea y página
+   * Títulos, capítulos y secciones
+* Imágenes
+   
+3. **Fundamentos para matemáticas y ciencia**
 
-   * Formato avanzado
-     * New command
+   * Ecuaciones y símbolos matemáticos
+   * Matrices
+   * Algoritmos y pseudocódigo
+
+4. **Tablas y gráficas**
+
+5. **Referencias y citas**
+
+   * Referencias cruzadas
+   * Referencias bibliográficas
+   * Notas a pie de página
+
+6. **Paquetes, plantillas e idiomas**
+
+7. **Formato avanzado**
+
+   * Configuración de página
+   * Sistemas de escritura
+   * Fuentes
+   * Espaciado
+   * Cajas y reglas
+
+8. **Creación de figuras**
+
+9. **Creación de presentaciones**
+
+## New
+
+* Tabla de contenidos
+* Hipervinculos
+* Headers y footers
+* Fuentes
+* Multicolumnas
+* Notas al pie de página
+* Alineación de texto
+
+## Bibliografía
+
+* https://es.overleaf.com/learn
