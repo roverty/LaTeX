@@ -1,0 +1,70 @@
+\documentclass{beamer}
+
+\usetheme{Luebeck}
+\usecolortheme{orchid}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{graphicx}
+
+\author{Armando Rivera}
+\date{\today}
+\title{Mi primera presentación con \LaTeX}
+\subtitle{Introducción}
+\institute[UNAM]{Universidad Nacional Autónoma de México\\Facultad de Ingenieía}
+
+
+\begin{document}
+	\begin{frame}
+		\maketitle	
+	\end{frame}
+	\begin{frame}{Índice}
+	%\tableofcontents[pausesections]
+	\tableofcontents
+	\end{frame}
+	\section{Introducción}
+	
+	\begin{frame}{Introducción}{Sub título}
+		Aquí hay texto que puedo colocar en mi diapositiva
+	\end{frame}
+
+	%\begin{frame}[plain]{Introducción}{Segundo frame}
+	\begin{frame}{Introducción}{Segundo frame}
+		Aquí hay otro frame con el que probaremos algunas opciones
+	\end{frame}
+\section{Bloques}
+	\begin{frame}{Bloques}{block}
+	Aquí tenemos un ejemplo de un bloque
+	\begin{block}{Pitágoras}
+			$ a^2+b^2=c^2 $
+	\end{block}		
+	\end{frame}
+	\begin{frame}{Bloques}{Alertas}
+	Aquí hay una alerta
+	\begin{alertblock}{CUIDADO}
+		$ (a+b)^2\neq a^2+b^2 $
+	\end{alertblock}
+	\end{frame}
+	\begin{frame}{Bloques}{Ejemplos}
+		\begin{exampleblock}{Ejemplo}
+			Aquí tenemos un ejemplo
+		\end{exampleblock}
+	\end{frame}
+	\section{Diapositivas dinámicas}
+	\begin{frame}{Diapositivas dinámicas}
+		\transsplitverticalout
+		Este frame es un ejemplo de la transiciones que podemos realizar al cambiar de diapositiva\pause
+		También podemos realizar pausas
+	\end{frame}
+	{
+			
+			\usebackgroundtemplate{
+				\includegraphics[width = \paperwidth, height=\paperheight]{img/fondo}
+			}
+			\begin{frame}{Fondo de diapositivas}
+			Esta diapositiva tiene el fondo cambiado
+		\end{frame}
+	}
+	
+\end{document}

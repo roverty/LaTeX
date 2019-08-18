@@ -1,0 +1,381 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{xstring}
+\usepackage{caption}
+\usepackage{cleveref}
+\usepackage{soul}
+\usepackage{ulem}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\title{Clase de Figuras}
+\author{Armando Rivera}
+\date{\today}
+\definecolor{myGreen}{HTML}{36A736}	%Este codigo es del color verde
+\definecolor{myBlue}{HTML}{02528F}
+\definecolor{myOrange}{HTML}{FF4312}
+\definecolor{blue254}{HTML}{02528F}
+\floatname{algorithm}{Algorítmo}
+
+\DeclareCaptionType{Ecuacion}
+
+\newcommand{\Fourier}[1][eq] {
+	\IfEqCase {#1} {	%Indoca que va a trabajar con el primer parametro
+		{eq} {
+			\begin{equation}
+			\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi ix \xi}dx
+			\end{equation}
+		}
+		{disp} {
+			\[
+			\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi\xi}dx
+			\]
+		}
+		{inline} {	%Le estamos diciento que va a colorear la ecuacion segun mandemos el color en el segundo parametro
+			$\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi\xi}dx$}
+	}
+}
+\newcommand{\Vector}{(x_1,x_2,\dots,x_n)}
+% $ \vector $
+\newcommand{\vectorr}[1]{(#1_1,#1_2,\dots,#1_n)}
+% $ \vector{a} $
+\newcommand{\miVector}[2]{(#1_1,#1_2,\dots,#1_#2)}
+% $ \miVector{x}{m} $
+\newcommand{\nuevovector}[2][x]{(#1_1,#1_2,\dots,#1_#2)}
+% El comando \nuevovector, recibe dos parámetros, uno opcional y el otro obligatorio, por defecto toma la x
+% $ \nuevovector{n}    \nuevovector[a]{n} $
+
+\newtheorem{theorem}{Definicion}
+\newtheorem{demo}{Demostracion}
+\newtheorem{Ejem}{Ejemplo}[section]
+
+
+\begin{document}
+	\maketitle
+	\st{Hola mundo}\\
+	\uline{Hola mundo}\\
+	\uuline{Hola mundo}\\
+	\uwave{Hola mundo}\\
+	\xout{Hola mundo}\\
+	\st{Hola mundo}\\
+	\ul{Hola mundo}
+	
+
+	\lipsum[1]
+	
+	
+	\chapter{Ambiente Matemático}
+	Para poder trabajar con símbolos matemáticos necesitamos usar AMS-LaTeX, ésta es una colección de paquetes que nos serán de ayuda a la hora de escribir ecuaciones matemáticas. Pertenece a American Mathematical Society.\\ Debemos usar el paquete \textbf{amsmath} para escribir ecuaciones, no olvidar incluilo al escribir ecuaciones. 
+	Para incluir ecuaciones necesitamos usar el símbolo de \$ ejemplo: \par
+	Si $a > b$ y $b>c$ $\therefore$ $a>c$ \ldots\\\\
+	$a_n=a_n-1+a_n-2$\\	%Error
+	$a_n=a_{n-1}+a_{n-2}$\\	%Correcto
+	
+	$f(x)=e^ax+b-c$			\\%Error
+	$f(x)=e^{ax+b}-c$		\\	%Correcto
+	
+	$P(z)=\alpha + \lambda(z-\alpha)^n$\\
+	Existen comandos para las letras griegas y la notación común\\
+	$\iint_Sdxdy=\iint_{H(s)}dxdy$\\
+	\\\\Usando display\\
+	Una ecuacion usando el comando display $\displaystyle{\int_a^bf(x)dx}$
+\\Otro ejemplo de como mostrar una ecuacion es la siguiente:
+\[
+p(x)+\frac{Q(x)}{P(x)}, q(x)=\frac{R(x)}{P(x)}
+\]	De esta forma la ecuacion se pone en una nueva linea, se centra y no se marca el numero de la ecuacion
+
+\begin{gather}
+	\sqrt[5]{x}\\
+	\prod_{i=0}^{n}\\
+	\sqrt{x}\Leftrightarrow x^{1/2}
+\end{gather}
+
+
+
+\section{Ambiente equation}
+Las raíces de la ecuación cuadrática están dadas por
+\begin{Ecuacion}
+
+\begin{equation}
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+\label{eq:Formula general}
+\end{equation}
+\caption{Formula general}
+\end{Ecuacion}
+donde $a$, $b$ y $c$ son \ldots
+
+%La presentacion de ecuaciones varia entre el modo inline y el modo display (ambiente equation)
+Escribir $\Omega=\sum_{k=1}^n \omega_k$ es diferente a escribir: 
+\begin{equation*}
+\Omega=\sum_{k=1}^n\omega_k
+\end{equation*}
+
+La formula general se ubica en la ecuación \cref{eq:Formula general}
+\begin{equation}
+\lim_{x\rightarrow y}{(1-x)^2+100(y-x^2)^2}
+\end{equation}
+
+\begin{align*}
+E(s)&=R(s)-B(s)\\
+Y(s)&=E(s)G(s)\\
+G(s)&=\frac{Y(s)}{E(s)}\\
+\end{align*}
+\newcommand{\cuadratica} {
+	\begin{equation}
+	x_{1,2}=\frac{1}{2a}\Bigl(-b\pm \sqrt{b^2-4ac}\Bigr)
+	\end{equation}
+}
+
+
+Aqui hay una ecuacion cuadratica \cuadratica
+
+
+\lipsum[1]
+\Fourier[disp]\\
+\lipsum[1]
+
+\subsection{Tipos de acentos}
+
+En \LaTeX podemos ocupar varios tipos de acentos usados en artículos científicos\\
+\begin{gather}
+a'\qquad a''\qquad a'''\qquad a''''\qquad\\
+\hat{a}\qquad\bar{a}\qquad\overline{ABC}\qquad\check{a}\qquad\tilde{a}\\
+\grave{a}\qquad\acute{a}\qquad\breve{a}\qquad\vec{a}\\
+\dot{a}\qquad\ddot{a}\qquad\dddot{a}\qquad\ddddot{a}\\
+\not{a}\qquad\mathring{a}\qquad\widehat{ABC}\qquad\widetilde{ABC}
+\end{gather}
+
+
+
+
+\section{Signos de agrupacion}
+$
+\{a+b\}\\
+\langle a+b	\rangle\\
+\lvert a+b	\rvert \\
+\lVert a+b	\rVert \\
+\lfloor	a+b \rfloor\\
+\lceil	a+b \rceil\\$
+[a + b]
+
+\[
+h_\theta(x)=g\Bigg(\frac{1}{1+e^{(-\theta^Tx)}}\Bigg)
+\]
+
+
+%\left y \right no es suficiente para ajustar los signos de agrupacion a su contenido, puede utilizarse entonces \bigl, \bigr, \Bigl, \biggl, \biggr, \Biggl, \Biggr
+
+\[
+\frac{d}{dx}\Biggl(\frac{dy}{dx}\Biggr)
+\]
+
+
+\section{Matrices}
+
+\[
+W(f_1, f_2)(x)=
+\begin{vmatrix}
+x^2 & x|x|\\2x & \frac{2x^2}{|x|}
+\end{vmatrix}
+\]
+
+El ambiente array permite alinear por separado cada columna de una matriz
+\[\left[
+\begin{array}{lcr}	%Aqui nos dice que la primera columna va a estar alineada a la izq, la segunda en el centro y la tercera a la derecha
+-0.1 & a & 0.1 \\ -0.01 & a+1 & 0.01
+\end{array} \right]
+\]
+
+El comando split permite escribir ecuaciones de varias lineas alineadas por un caracter
+\[
+\begin{split}
+L[c_1y_1 + c_2y_2] &= c_2L[y_1'' + py_1']\cdots \\
+&= C_2L[y_1] + c_2L[y_2]
+\end{split}	%En este caso las lineas estan alineadas por el signo igual, con este ambiente no se enumeran las ecuaciones
+\]
+
+También podemos hacer uso del ambiente \texttt{gather} Este ambiente permite agrupar un conjunto de ecuaciones numeradas sin carácter de alineación, si quisiéramos que alguna ecuación no este numerada agregamos el comando notag al final de la ecuación
+\begin{gather}
+W' + p(x)W=0 \\
+W(x) = Ce^{-\int p(x) dx}	\notag 	%Esta ecuacion no se mostrara numerada
+\end{gather}
+
+
+\begin{equation*}
+\mathbf{X} = \left(
+\begin{array}{ccc}
+x_1 & x_2 & \ldots \\
+x_3 & x_4 & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right)
+\end{equation*}
+
+
+$\mathbb{R}$
+
+El paquete amsmath nos provee de ambientes para crear matrices de una forma sencilla, se tienen 6 matrices disponibles y un ambiente cases.
+\begin{itemize}
+	\item cases
+	\item matrix sin delimitador
+	\item pmatrix
+	\item bmatrix
+	\item Bmatrix
+	\item vmatrix
+	\item Vmatrix
+\end{itemize}
+
+\begin{equation*}
+|x| =
+\begin{cases}
+-x & \text{if } x < 0,\\
+0 & \text{if } x = 0,\\
+x & \text{if } x > 0.
+\end{cases}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{matrix}
+1 & 2 \\
+3 & 4
+\end{matrix}
+\qquad
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\end{equation*}
+\[
+\begin{Bmatrix}
+	a_{11} & a_{12} & a_{13}\\
+	a_{21} & a_{22} & a_{23}\\
+	a_{31} & a_{32} & a_{33}
+\end{Bmatrix}
+\]
+
+\[
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+\]
+
+\[
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+\]
+\[
+\begin{Vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{Vmatrix}
+\]
+
+Ejemplo de Serie de Fourier \Fourier[eq]
+
+
+\begin{theorem}[Ejemplo de definición]
+	Este es un ejemplo del ambiente \texttt{theorem}
+\begin{gather}
+W' + p(x)W=0 \\
+W(x) = Ce^{-\int p(x) dx}	\notag 	%Esta ecuacion no se mostrara numerada
+\end{gather}
+\[
+W(f_1, f_2)(x)=
+\begin{vmatrix}
+x^2 & x|x|\\2x & \frac{2x^2}{|x|}
+\end{vmatrix}
+\]
+\end{theorem}
+
+\begin{demo}%[Ejemplo de Demostración]
+	Esto es una demostración
+	\label{dem:Ejemplo}
+\end{demo}
+El ejemplo de demostracion \ref{dem:Ejemplo} es un ejemplo de una demostracion usando el ambiente thorem
+
+\chapter{Ejemplos}
+\lipsum[2-2]
+\section{Esta es una sección}
+$\heartsuit\clubsuit$
+
+\lipsum[2-2]
+\begin{Ejem}
+	Considerese \dots \lipsum[2-2]
+	\begin{equation}
+	G(s)=\begin{array}{cc}
+	[1& 0]
+	\end{array} 
+	\Biggl\{
+	\left[
+	\begin{array}{cc}
+		s&-1\\\frac{K}{m}&s+\frac{b}{m}
+	\end{array}
+	\right]
+	\Biggr\}^{-1}
+	\left[
+	\begin{array}{c}
+		0\\\frac{1}{m}
+	\end{array}
+	\right]
+\end{equation}
+
+	\end{Ejem}
+
+
+\chapter{Incluir código}
+Para incluir código tenemos que usar el paquete \textit{algorithmic}y del \textit{algorithm} y debemos de iniciar el entorno \textit{algorithmic} y dentro de él encerrar el presudocódigo.
+
+
+\begin{algorithm}
+	\caption{Ejemplo de pseudocódigo}
+	\begin{algorithmic}[1]
+		\REQUIRE Aquí incluimos los requerimientos del programa
+		%\ENSURE $y = x^n$
+		%\STATE $y \leftarrow 1$
+		\IF{Condición}
+		\STATE Ejecuta esta linea
+		\STATE También ejecuta esta
+		\ELSE
+		\STATE De lo contrario ejecuta esta linea
+		\STATE Y después esta
+		\ENDIF
+		\WHILE{Condición}
+		\IF{Condición de if}
+		\STATE Más lineas de código a ejecutar
+		\STATE Otra línea más
+		\ELSE[Podemos agregar condiciones a un else]
+		\STATE Y después más líneas de código
+		\STATE Esta es la última
+		\ENDIF
+		\ENDWHILE
+		\STATE Código \COMMENT{Aquí hay texto comentado}
+		\LOOP
+		\STATE this processing will be repeated forever
+		\ENDLOOP
+	\end{algorithmic}
+\end{algorithm}
+
+\chapter{Tarea}
+
+$( a^2+b^2)=c^2\\\\ c=\sqrt{a^2+b^2}\\\\
+A\oplus B=A\overline{B}+\overline{A}B \\\\
+\text{El valor de: } R_1 \text{ es: } 300[\Omega] \\\\
+Z(X)=\frac{X-\mu}{\sigma}\\\\
+\sum_{i=0}^nn=\frac{n(n+1)}{2}\\\\
+\sin^2{x}+\cos^2{x}=1\\\\
+F(\omega)=\int^\infty_{-\infty}{f(t)e^{-j\omega t}\delta t}$
+
+
+\end{document}
