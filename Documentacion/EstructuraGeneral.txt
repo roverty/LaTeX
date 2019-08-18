@@ -1,0 +1,155 @@
+-------------Documentacion el LaTex-------------
+www.latex-project.org	%Pagina en Ingles
+ctan.org				%Es el repositorio mas grande de paquetes de LaTex, aqui podemos encontrar la documentacion de los paquetes
+
+	Documentacion en Ingles
+www.overleaf.com/latex/templates/	%Repositorio de plantillas LaTeX
+en.wikibooks.org/wiki/LaTeX 	%Wikibook de LaTeX
+es.sharelatex.com/learn	%Pagina de aprendizaje de latex de sharelatex
+tex.stackexchange.com/	%Principal comunidad de LaTeX
+
+Documentacion en Espaniol
+minisconlatex.blogspot.com.co/ %Blog dedicado a LaTeX
+es.wikibooks.org/wiki/Manual_de_LaTeX
+www.overleaf.com/gallery/tagged/spanish#.WSCyXLNALQK
+
+%Los comandos (en el preambulo)
+\title, \author, \date definen el encabezado de presentacion del documento
+
+El comando \maketitle, despues de \begin{document} crea el contenido del encabezado
+
+Utilice el ambiente \abstract para definir el resumen
+
+Utilice \section, \subsection, \subsubsection o \paragraph para definir las diversas partes del documento, Cuando estos comandos siguen de un * \section*{} no se escribe el numero de seccion, subseccion, capitulo, etc segun sea el caso
+
+Para llenar nuestro archivo de texto usamos el paquete lipsum
+\usepackage{lipsum}
+\lipsum[2]
+
+----------Columnas-----------
+Los comandos \twocolumns y \onecolumn modifican la distribucion del texto a una o dos columnas, cada espacio en una nueva pagina.
+
+El paquete multicolumn es un ambiente de distribucion de columnas sin crear una pagina nueva, la observacion es que no permite utilizar elementos flotantes tales como figuras
+
+El paquete paracol permite sincronizar columnas e incluir elementos flotantes
+
+%-----------Ejemplo usando multicol-------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{multicol}
+
+\title{Titulo del documento}
+\author{Armando Rivera}
+\date{Agosto 31}
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		\lipsum[2-3]	%Equivalente a Lorem
+	\end{abstract}
+
+    \renewcommand{\columnseprule}{0.5pt}	%Nos permite dibujar una linea entre las columnas
+    \setlength\columnsep{15mm}				%Especifica la separacion entre columnas
+    \begin{multicols}{2}
+    \lipsum[1-5]
+    \end{multicols}
+
+\end{document}
+
+
+%-------------------------Ejemplo paracol----------------------------------
+
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{paracol}
+\usepackage{xcolor}
+
+\title{Titulo del documento}
+\author{Armando Rivera}
+\date{Agosto 31}
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		\lipsum[2-3]	%Equivalente a Lorem
+	\end{abstract}
+
+	%Definimos el ambiente paracol
+	\setlength\columnsep{15mm}	%Definimos la separacion entre columnas
+	\begin{paracol} {2}[\section{Seccion de titulo Largoooo}]	%El numero 2 especifica el numero de columnas a utilizar, El segundo parametro entre corchetes indica el nombre de la seccion, se especifica ahi para evitar que ser vea en una sola comna y cortado
+
+		\section{Seccion del titulo Largooooo}	
+			%De esta forma el titulo de la seccion solo ocupara una columna lo que causara que se vea "cortado"
+ 		\lipsum[1-3]	%Este parrafo esta en una columna
+
+ 		%El paquete paracol nos permite especificar en que momento saltar a la segunda columna
+ 		\switchcolumn	%Este comado nos permite cambiar de columna cuando lo deseemos
+ 		Esta es la traduccion del Lorem, la traduccion esta en la segunda columna, podemos cambiar de columna a nuestro antojo gracias a el ambiente paracol usando el comando switchcolumn
+
+ 		%Para volver a cambiar de columna usamos el mismo comando 
+ 		\switchcolumn*	%Con el asterisco decimos que el proximo parrafo estara sincronizado con este parrafo, es decir que se encontraran al mismo nivel
+    	\lipsum[1]	%Este parrafo estara a la altura...... 
+    	\switchcolumn	%(Volvemos a cambiar de columna)
+   		\lipsum[2]	%..........De este parrafo
+
+   		%Si no ponemos asterisco simplemente no dejara espacio y se seguira escribiendo alternando entre columnas
+
+	\end{paracol}
+
+    %El ambiente paracol tambien nos permite colocar columnas con tanto porcentaje de texto. Ejemplo:
+
+    \subsection{Columnas dispares}
+    \columnratio{.6}	%Especificamos que va a ocupar el 60% de la columna para el texto
+    \columncolor{red}	%Este comando colorea el texto de rojo de toda una columa, es necesario importar el paquete xcolor
+    \begin{paracol} {2}
+    	\lipsum[5]
+    	\switchcolumn
+    	\color{cyan}	%Este comando colorea de cyan el texto
+    	\lipsum[6]
+    	\textcolor{blue}{\lipsum[2]}	%Este comado recibe como primer parametro el color del texto y en el segundo parmetro el texto
+    \end{paracol}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

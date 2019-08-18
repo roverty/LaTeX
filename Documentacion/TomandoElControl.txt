@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{xcolor}	%Paquete xcolor
+\usepackage{xstring} %Paquete necesario para cargar condicionales en newcommand
+\usepackage{tcolorbox}
+
+\newenvironment{remark}[1] {
+	\begin{tcolorbox}[colorback = myBlue!25, colframe = blue254!75, title=#1, arc = 3mm, sharp corners = northwest]
+	\fontfamily{gag}\selectfont
+	\end{tcolorbox}
+}
+
+
+\definecolor{myGreen}{HTML}{36A736}	%Este codigo es del color verde
+\definecolor{myBlue}{HTML}{02528F}
+\definecolor{myOrange}{HTML}{FF4312}
+\definecolor{blue254}{HTML}{02528F}
+
+\newcommand{\cuadratica} {
+	\begin{equation}
+		x_{1,2}=\frac{1}{2a}\Bigl(-b\pm \sqrt{b^2-4ac}\Bigr)
+	\end{equation}
+}
+
+%El numero 2 indica que va a recibir dos parametros de entrada, si no le especifico el primer parametro va a tomar eq por defecto
+\newcommand{\Fourier}[2][eq] {
+	\IfEqCase {#1} {	%Indoca que va a trabajar con el primer parametro
+		{eq} {
+			\begin{equation}
+				\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi ix \xi}dx
+			\end{equation}
+			}
+		{disp} {
+			\[
+				\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi\xi}dx
+			\]
+		}
+		{inline} {	%Le estamos diciento que va a colorear la ecuacion segun mandemos el color en el segundo parametro
+			\textcolor{#2}{$\hat{f}(\xi)=\int_{-\infty}^{\infty}f(x)e^{-2\pi\xi}dx$}
+		}
+	}
+}
+
+
+\title{Tomando el control de \LaTeX}
+\author{Armando Rivera}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Colores}
+El paquete $\backslash$xcolor permite utilizar una enorme cantidad de colores por nombre predefinido o definir sus propios colores.\\\texttt{usenames} - 16 colores, \texttt{divpsnames} - 68 colores, \texttt{svgnames} - 150 colores, \texttt{x11names} - 300 colores.\\Para definir nuevos colores ejecutamos la siguiente instruccion.\\ $\backslash$definecolor[nombre]\{modelo\}\{color\}\\
+Para personalizar un color lo podemos hacer de varias maneras, tenemos que elegir el nombre, modelo y color. Ejemplo\\\textbf{Modelo gray} Escala de grices, recibe un unico valor entre 0 y 1\\$\backslash$definecolor\{gris58\}\{gray\}\{.58\}\\\textbf{Modelo rgb} Tres valores entre 0 y 1 que representan \textit{rojo, verde, azul}.\\ $\backslash$definecolor\{MiAzul\}\{rgb\}\{0, 0.6, 0.8\}\\\textbf{Modelo RGB} Tres valores enteros entre 0 y 255\\ $\backslash$definecolor\{miVerde\}\{RGB\}\{0, 155k 10\}\\\textbf{Modelo HTML} Seis valores en hexadecimal\\$\backslash$definecolor\{miRojo\}\{HTML\}\{AC0031\}\\Para definir un color nos podemos ir a la pagina \texttt{paletton.com} y seleccionamos el color deseado, a continuacion nos mostrara el codigo de dicho color en formato hexadecimal y rgb.\\\textcolor{myGreen}{Este texto esta en color verde, se llama myGreen fue hecho con el modelo HTML y es de color 36A736  toda esta definicion fue hecha en el preambulo}\\Tambien podemos definir todos los colores en un archivo diferente e importarlo con el comando $\backslash$input\{colores.tex\}
+
+%--------------Definir nuevos comandos-------------------------
+\section{Nuevos Comandos}
+El comando \textcolor{myGreen}{$\backslash$newcommand} (en el preambulo) define nuevos
+comandos.\\\textcolor{myGreen}{\{$\backslash$nombre\}}[parametros]\{definicion\}\\Los parametros de entrada (maximo 9) no son obligatorios, si no se declaran.\\Ejemplo:
+\cuadratica{}	Esta ecuacion cuadratica esta definida en el preambulo con el comando \textcolor{myGreen}{$\backslash$newcommand}\\\LaTeX no permite comandos con el mismo nombre.\\Tambien podemos darle parametros de entrada a los comandos. Ejemplo:\\\\La ecuacion de Fourier \Fourier[disp] en linea tiene que aparecer en linea con este texto%Para esto se tiene que usar el paquete xstring 
+. Podemos cambiar inline por eq o disp, si no le indico el parametro va a tomar \textit{eq} por defecto.\\La siguiente ecuacion es con color \Fourier[inline]{myGreen}
+
+El comando \textcolor{myGreen}{$\backslash$renewcommand} permite cambiar la definicion de un comando ya existente.\\El primer paramtero (unicamente) de un nuevo comando puede tener un valor predefinido y opcional.
+
+%--------------------Definir nuevos ambientes------------------
+\section{Definir Ambientes}
+El comando \textcolor{myGreen}{$\backslash$newtheorem} permite definir ambientes nuevos que pueden estar numerados de forma continua en  todo el documento o por secciones.\\
+\textcolor{myGreen}{$\backslash$newtheorem}\{nombre\}\{titulo\}[numeracion] 
+\\
+\begin{remark}{Nota Importante}
+	\lipsum[1]
+ \end{remark}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

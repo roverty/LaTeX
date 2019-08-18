@@ -1,0 +1,128 @@
+
+Fuentes donde encontrar informacion
+
+tex.stackexchange.com
+The TeXbook
+A not so short introduction to LaTeX
+wikibooks.org/wiki/Manual_de_LaTeX
+
+%-------------------------Estructura de un documento en LaTeX---------------------
+\documentclass{article}		%Preambulo, indica que se va a trabajar con un articulo
+\usepackage[utf8]{inputenc}	%Define la codificacion, util para insertar acentos y letras propias del idioma espaniol
+\usepackage[spanish]{babel}
+\begin{document}	%Marca el inicio del documento
+	Hola Mundo!		%Contenido del documento
+\end{document}		%Marca el final del documento
+
+
+Uso de comillas
+	Comillas simples	`texto' produce 'texto'
+	Comillas dobles		``texto'' produce "texto"
+
+Algunos caracteres especiales
+	%	Comentarios
+	#	argumentos de entrada
+	&	separador de tabulaciones
+	$	Matematicas en linea
+
+Para escribir alguno de estos caracteres especiales debe anteceder un \ 
+	\%	produce		%
+
+%----------El simbolo $  --------------
+Se utiliza para que luzca bien la ecuacion matematica
+
+%Ejemplo:
+\begin{document}
+	Sean $a$ y $b$ dos enteros positivos diferentes, entonces $c=a-b+1$ \ldots
+\end{document}
+%Note que es necesario usar el simbolo $ al inicio y al final de la expresion matematica
+%El comando \ldots genera tres puntos suspensivos
+
+%-------------Superindices, subindices y corchetes---------
+%Utilice ^ para superindices y _ para subindices
+%Utilice llaves {} para escribir superindices o subindices grandes
+%Ejemplos:
+
+$a_n=a_n-1+a_n-2$		%Error
+$a_n=a_{n-1}+a_{n-2}$	%Correcto
+
+$f(x)=e^ax+b-c$			%Error
+$f(x)=e^{ax+b}-c$			%Correcto
+
+%Existen comandos para las letras griegas y la notacion comun
+$P(z)=\alpha + \lambda(z-\alpha)^n$
+$\iint_Sdxdy=\iint_{H(s)}dxdy$
+
+%El comando \iint Produce una integral doble
+
+%------------Ambientes----------
+%Los comandos \begin y \end habilitan el uso de ambientes que son espacios "especiales" de un documento
+
+%El siguiente ejemplo muestra una lista
+\begin{itemize}
+	\item Le\'on
+	\item Tigre
+	\item Oso
+	\item Ardilla
+	\item ...
+\end{itemiza}
+
+\begin{enumerate}
+	\item Le\'on
+	\item Tigre
+	\item Oso
+	\item Ardilla
+	\item ...
+\end{enumerate}
+
+%-----------Ambiente equation------------
+%El ambiente equation presenta de una forma elegante ecuaciones grandes
+%Ejemplo:
+
+Las raices de la ecuacion cuadratica estan dadas por \begin{equation}
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+donde $a$, $b$ y $c$ son \ldots
+
+%La presentacion de ecuaciones varia entre el modo inline y el modo display (ambiente equation)
+Escribir $\Omega=\sum_{k=1}^n \omega_k$ es diferente a escribir: 
+\begin{equation}
+\Omega=\sum_{k=1}^n\omega_k
+\end{equation}
+
+%------------Paquetes------------
+Los paquetes (packages) son librerias de comandos y ambientes extra, existen cientos de paquetes orientados a diversas areas.
+Para incluir paquetes en un documento debe utilizarse el comando \usepackage en el preambulo
+
+%Ejemplo:
+\usepackage[utf8]{inputenc}	%Paquete de codificacion para caracteres en espaniol
+\usepackage[spanish]{babel}	%Paquete para reconocimiento de idioma
+\usepackage{amsmath}	%Paquete de la sociedad Americana de Matematicas
+
+%----------------Paquete amsmath-------------
+Utilice equation* para ecuaciones no numeradas
+\begin{equation*}
+	\Omega = \sum_{k=2}^n \omega_k
+\end{equation*}
+
+amsmath define comandos para muchos operadores matematicos
+\begin{equation*}
+	\min_{x,y}{(1-x)^2+100(y-x^2)^2}
+\end{equation*}
+
+Puede definir operadores no incluidos en el paquete con el comando \operatorname
+
+\begin{equation*}
+	\beta_1=\frac{\operatorname{Cov}(R_i, R_m)}{\operatorname}{Var}(R_m)
+\end{equation*}
+
+%---------------Paquete Align--------------
+Con el ambiente align* podemos alinear una secuencia de ecuaciones
+%Ejemplo:
+
+\begin{align*}
+	\frac{r^2R'' + rR'}{R}+r^2\lambda^2 &=v^2\\
+	r^2R''+rR'+r^2\lambda^2R &=v^2R\\
+	r^2R''+rR'+(\lambda^2r^2-v^2)R &=0
+\end{align*}
+Utiliza & para establecer el caracter de alineacion y \\ oara iniciar una nueva linea

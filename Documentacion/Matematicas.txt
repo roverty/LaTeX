@@ -1,0 +1,113 @@
+%En matematicas se usan muchos simbolos, existe un documento llamado "The Comprehensive LaTeX Symbol List" el cual contiene un gran numero de simbolos acompaniados de sus comandos respectivos para colocarlos en LaTeX
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{multicol}
+
+\title{Titulo del documento}
+\author{Armando Rivera}
+\date{Agosto 31}
+
+\begin{document}
+	\maketitle
+
+	Una ecuacion en linea se presenta de la forma $y'' + p(x)y'+q(x)y=g(x)$, un ejemplo mas $\int_a^bf(x)dx$%De esta forma la ecuacion se adapta a el tamanio de la linea
+
+	\\\\Usando display\\
+	Una ecuacion usando el comando display $\displaystyle{\int_a^bf(x)dx}$	%Con display la ecuacion se muestra mas grande que el tamnio de la linea
+	\\Otro ejemplo de como mostrar una ecuacion es la siguiente:
+	\[
+		p(x)+\frac{Q(x)}{P(x)}, q(x)=\frac{R(x)}{P(x)}
+	\]	De esta forma la ecuacion se pone en una nueva linea, se centra y no se marca el numero de la ecuacion\\\\
+	Para poner la ecuacion numerada se usa el ambiente equation, De esta forma la ecuacion se pone en una nueva linea, se centra y se marca el numero de la ecuacion Ejemplo:\\
+	\begin{equation}
+		p(x)=\frac{x}{x-3}
+	\end{equation}
+
+	Para poner la ecuacion de forma que no este numerada es de igual forma con el ambiente equation solo que colocamos un asterisco. Ejemplo:
+	\begin{equation*}
+		q(x)=\frac{\ln|x|}{x-3}
+	\end{equation*}
+	   Una fraccion de tamanio automatico se puede escribir de la siguiente forma $\frac{a}{b}$, una fraccion en modo display dentro de una linea de texto se puede escribir de la siguiente manera $\dfrac{a}{b}$\\\\Para escritura en fracciones continuas lo mejor es utilizar cfrac, Ejemplo:\\\\$\pi$ expresado en fraccion se define de la siguiente forma
+	\begin{equation}
+		\pi=\cfrac{4}{1+\cfrac{1}{2+\cfrac{3^2}{2+\ddots}}}
+	\end{equation}
+
+
+
+\end{document}
+
+%----------------------Parentesis y signos de agrupacion-------
+Los principales signos de agrupacion pueden obtenerse con
+\{	\}
+\langle	\rangle
+\vert	\Vert
+\lfloor	\rfloor
+\lceil	\rceil
+
+El tamanio de parentesis y signos de agrupacion pueden ajustarse de acuerdo al contenido anteponiendo al signo la instruccion \right o \left.
+En algunas ocasiones el uso de \left y \right no es suficiente para ajustar los signos de agrupacion a su contenido, puede utilizarse entonces \bigl, \bigr, \Bigl, \biggl, \biggr, \Biggl, \Biggr Ejemplo:
+\[
+\frac{d}{dx}\left(\frac{dy}{dx}\right)
+\]
+
+%------------------Matrices------------------
+Existen diferentes ambientes para matrices de acuerdo al tipo de parentesis que la contenga
+matrix		Sin parentesis
+vmatriz		||
+pmatrix		()
+Bmatrix		{}
+bmatrix 	[]
+Vmatrix 	|| ||
+Ejemplo:
+\[
+W(f_1, f_2)(x)=
+\begin{vmatrix}
+	x^2 & x|x|\\2x & \frac{2x^2}{|x|}
+\end{vmatrix}
+\]
+
+El ambiente array permite alinear por separado cada columna de una matriz
+\[\left[
+	\begin{array}{lcr}	%Aqui nos dice que la primera columna va a estar alineada a la izq, la segunda en el centro y la tercera a la derecha
+	-0.1 & a & 0.1 \\ -0.01 & a+1 & 0.01
+	\end{array} \right]
+\]
+
+El comando split permite escribir ecuaciones de varias lineas alineadas por un caracter
+\[
+\begin{split}
+L[c_1y_1 + c_2y_2] &= c_2L[y_1'' + py_1']\cdots \\
+&= C_2L[y_1] + c_2L[y_2]
+\end{split}	%En este caso las lineas estan alineadas por el signo igual, con este ambiente no se enumeran las ecuaciones
+\]
+
+Tambien podemos hacer uso del ambiente \texttt{gather} Este ambiente permite agrupar un conjunto de ecuaciones numeradas sin caracter de alineacion, si quisieramos que alguna ecuacion no este numerada agregamos el comando notag al final de la ecuacion
+\begin{gather}
+	W' + p(x)W=0 \\
+	W(x) = Ce^{-\int p(x) dx}	\notag 	%Esta ecuacion no se mostrara numerada
+\end{gather}
+
+El ambiente align funciona como split con la caracteristica que permite alinear varias columnas de ecuaciones
+
+%----------------------Comando newtheorem---------------
+La aparicion de Teoremas, demostraciones, definiciones, etc. es muy frecuente en documentos con contenido matematico, el comando newtheorem (en el preambulo) permite definir nuevos ambientes para estos casos.\\
+La sintaxis del comando newtheorem es simple $\backslash newtheorem$\{nombre\}\{titulo\}
+
+%\newtheorem{theorem}{Definicion} Esto va en el preambulo
+
+\begin{theorem}[Ejemplo de definicion]
+Este es un ejemplo del ambiente \texttt{theorem}
+\end{theorem}
+
+\begin{theorem}
+	Este es otro ejemplo
+\end{theorem}
+
+%\newtheorem{proof}{Demostracion} Esto va en el preambulo
+
+\begin{proof}
+	Esto es una demostracion
+\end{proof}
+
