@@ -1,4 +1,0 @@
-# Introducción
-
-## ¿Qué es LaTeX?
-
