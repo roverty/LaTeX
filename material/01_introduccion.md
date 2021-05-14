@@ -2,6 +2,8 @@
 
 ## ¿Qué es LaTeX?
 
+* Se pronuncia Latej
+
 * Es un sistema de composición tipográfica basado en TeX, originalmente centrado en obras de contenido matemático, pero que actualmente abarca multitud de tipos de escritos. 
 
 * Tiene características tanto de un lenguaje de marcado como de uno de programación.
@@ -18,7 +20,8 @@ https://es.wikibooks.org/wiki/Manual_de_LaTeX
 
 ```shel
 DEFINICIÓN
-Compilador: Un compilador es un ente de software que traduce un lenguaje de programación 	en otro, usualmente de más bajo nivel.
+Compilador: Un compilador es un ente de software que traduce un lenguaje 
+de programación en otro, usualmente de más bajo nivel.
 ```
 
 Para usar LaTeX necesitamos hacer uso de dos herramientas completamente independientes una de la otra.
@@ -39,7 +42,11 @@ Cada una de estas distribuciones contiene herramientas de compilación que se ex
 - `xetex`/`xelatex`: compilan a pdf pero tienen la diferencia que gestionan Unicode y pueden usar las fuentes del sistema sin necesidad de configurar nada.
 - `luatex`/`lualatex`: compilan a pdf. La diferencia es que están escritos en [Lua](http://www.lua.org/), un lenguaje de programación bastante interesante
 
+![](img/01_introduccion/latex-file-flow.png)
+
 https://ondiz.github.io/cursoLatex/Contenido/02.QueNecesito.html
+
+https://es.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler
 
 ## Editores de LaTeX
 
@@ -66,6 +73,18 @@ Podemos dividir a los editores de texto de la siguiente forma
   * Un editor de textos.
   * Un Compilador integrado.
   * Un Debuger.
+  
+- *Editores en línea*: Son editores que requieren de acceso a internet y la compilación puede ser algo lenta.
+
+  - Overleaf: Overleaf es un editor de texto en línea para LaTeX muy completo
+    * Es gratis para proyectos individuales
+    * Solo se necesita registrarse y empezar a codificar.
+    * Se puede trabajar de forma colaborativa, hasta 6 personas [PREMIUM]
+    * Se puede integrar proyectos de github [PREMIUM]
+  - *LatexShare* Actualmente se integro con Overleaf, pero solía ser una buena alternativa a Overleaf.
 
 https://ondiz.github.io/cursoLatex/Contenido/02.QueNecesito.html
 
+## Ventajas
+
+## Desventajas

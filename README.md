@@ -13,8 +13,8 @@ Del 6 de agosto de 4 de octubre de 2019
 2. **Formato básico de un documento**
 
    * Formato de texto
-   
    * Tipos de documentos (Books, Article,Report, Letter, etc.); Sections, Chapters, Parts, etc.
+   * abstract, maketitle
    * Listas
    * Caracteres especiales
    * Saltos de línea y página
@@ -39,7 +39,6 @@ Del 6 de agosto de 4 de octubre de 2019
 
 6. **Paquetes, plantillas e idiomas**
    
-
 7. **Formato avanzado**
 
    * Configuración de página (Índices: \tableofcontents, \listoffigures, \listoftables y cambiar propiedades con \renewcomand)

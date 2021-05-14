@@ -1,71 +1,46 @@
-# Introducción
+# Formato Básico
 
-## ¿Qué es LaTeX?
+## Estructura básica (Hola Mundo)
 
-* Es un sistema de composición tipográfica basado en TeX, originalmente centrado en obras de contenido matemático, pero que actualmente abarca multitud de tipos de escritos. 
+Los archivos fuente de nuestros documentos creados en LaTeX deben tener la extensión `.tex`
 
-* Tiene características tanto de un lenguaje de marcado como de uno de programación.
+Otras extensiones válidas son `.bib` para los archivos de bibliografía.
 
-* Se basa en el principio del WYGIWYM, siglas inglesas de *lo que se obtiene es lo que se quiere*, y se basa en crear un documento de texto con marcado lógico y semántico del que se genera un PDF (aunque hay otra opciones).
+Un archivo `.tex` debe contener la siguiente estructura básica.
 
-Es muy popular en contextos académicos científicos, pero no se limita a la creación de trabajos, tesis y presentaciones: también, fuera de este ámbito y en el mundo de la producción editorial, abarca la creación de catálogos o diccionarios partir de bases de datos, la producción libros de textos y documentación técnica..., todo ello en un contexto que abarca desde la escritura por el autor, liberado de la tarea del formato, pasando por la composición, hasta la imposición para la imprenta.
+* Preámbulo
+* Contenido
 
-![logo](img/01_introduccion/logo.svg)
-
-https://es.wikibooks.org/wiki/Manual_de_LaTeX
-
-## Compiladores de LaTeX
-
-```shel
+```shell
 DEFINICIÓN
-Compilador: Un compilador es un ente de software que traduce un lenguaje de programación 	en otro, usualmente de más bajo nivel.
+Comentario: Un comentario es texto que el compilador ignora y generalmente nos sirve para escribir alguna anotación relevante
 ```
 
-Para usar LaTeX necesitamos hacer uso de dos herramientas completamente independientes una de la otra.
+### Convenciones importantes
 
-* Un compilador de LaTeX
-* Un editor de texto plano especializado en LaTeX
+- { } Para parámetros OBLIGATORIOS
+- [  ] Para parámetros OPCIONALES
 
-Las distribuciones de LaTeX más conocidas son: 
+```latex
+%%  AQUI EMPIEZA EL PREAMBULO
+\documentclass{< article | book | report | letter | beamer | ... >}
+% Esto es un comentario
+% Librerias adicionales para matemáticas, caracteres especiales, gráficos, tablas, etc.
+%% TERMINA PREAMBULOS
 
-- TeXLive, distribución multiplataforma, la encontramos para GNU/Linux, Windows y MacOS.
-- MikTeX, una distribución específica para Windows
-- MacTeX, una distribución para MacOS.
+%% COMIENZA CONTENIDO
+\begin{document}
 
-Cada una de estas distribuciones contiene herramientas de compilación que se explican a continuación.
+\maketitle
+	Hola Mundo en \LaTeX
 
-- `tex` y `latex`: compilan respectivamente TeX y LaTeX a dvi. Para los siguientes el que solo contenga `tex` compilará TeX y el que contenga `latex` compilará LaTeX
-- `pdftex`/`pdflatex`: compilan a pdf
-- `xetex`/`xelatex`: compilan a pdf pero tienen la diferencia que gestionan Unicode y pueden usar las fuentes del sistema sin necesidad de configurar nada.
-- `luatex`/`lualatex`: compilan a pdf. La diferencia es que están escritos en [Lua](http://www.lua.org/), un lenguaje de programación bastante interesante
+\end{document}
+%% TERMINA EL CONTENIDO
+```
 
-https://ondiz.github.io/cursoLatex/Contenido/02.QueNecesito.html
+## Tipos de documento en LaTeX
 
-## Editores de LaTeX
 
-Podemos dividir a los editores de texto de la siguiente forma
 
-- *Editores de propósito general*: son los que sirven para escribir en general. 
-
-  - Gedit
-  - Vim
-  - Emacs
-  - Sublime
-  - Atom
-  - Visual Studio Code
-  - Notepad++
-
-- *Editores específicos* ([IDE](https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado)): son los editores desarrollados expresamente para escribir LaTeX. Hay bastantes, 
-
-  - [TeXstudio](http://texstudio.sourceforge.net/) en Windows
-  - [Kile](http://kile.sourceforge.net/) en GNU/Linux
-  - TexMaker para Windows, GNU/Linux y MacOS 
-
-  Un IDE generalmente tiene tres herramientas básicas
-
-  * Un editor de textos.
-  * Un Compilador integrado.
-  * Un Debuger.
-
-https://ondiz.github.io/cursoLatex/Contenido/02.QueNecesito.html
+## Más acerca del preámbulo y documentclass
 
