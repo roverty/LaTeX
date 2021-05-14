@@ -1,0 +1,42 @@
+Bienvenida
+	Dar una bienveinda al curso y a proteco en generarl
+	Explicar el cuidado de los equipos ya que son nuevos, comentarles que no se pueden cambiar de máquina
+	Reglas del curso
+
+Presentación
+	Presentarse el titular, adjuntos y auxiliar. Nombre, qué estudian y semestre de la carrera.
+	Presentación de los asistentes, nombre, han programado antes, cuál es la utilidad que le darán a lo que aprendan en el curso.
+	Presentar el temario
+
+Introducción a LaTeX
+	¿Qué es LaTex?
+	Ventajas
+	Tipos de documentos que podemos generar, (article, book, report, etc)
+	Desventajas
+
+Entoro de desarrollo
+	Compilador, ¿Qué es?, ¿Cuáles podemos  ocupar en LaTeX
+	IDE
+
+Práctica
+	Creación de un Hola mundo
+	Explicar los comandos y paquetes usados
+	Cómo incluir paquetes nuevos en TeXStudio, se incluirán dos, babel y graphicx
+	El tipo de fuente que usa LaTeX es computer modern
+	LaTeX dispone de tres tipos de fuente por defecto las cuales son: roman o serif, sans-serif y monoespaciada
+
+
+Introducción a LaTeX
+
+Una actividad común entre jóvenes universitarios es escribir reportes, muchas de las veces resulta tedioso el proceso de estructurar y darle formato a nuestro trabajo, la presión incrementa cuando se tiene que hacer más de uno a la semana y el tiempo no nos favorece. Sin embargo existen entornos de trabajo que nos hacen la vida más fácil y uno de ellos es LaTeX, dicha herramienta nos ofrece una manera distina, sencilla y de alta calidad tipográfica para hacer reportes escritos con un acabado profesional.
+
+		LaTeX es un lenguaje de marcado de etiquetas escritas en archivos de texto plano, éstos se compilan creando un documento final. El formato que obtenemos es similar al de las imprentas, esto lo consigue gestionando un motor tipográfico llamado TeX.
+
+		Con LaTeX podemos crear textos, cartas, presentaciones, libros, artículos científicos, tesis, etc; permitiendo que el usuario se enfoque en el contenido del documento y no en el diseño textual ya que las imágenes, ecuaciónes, tablas, etc, se acomodan automáticamente quedando ubicadas lo mejor posible, para quienes trabajamos con expresiones matemáticas es muy sencillo agregarlas a nuestro trabajo sin mencionar que la calidad de las mismas es impresionante.
+
+		Aprender algo nuevo puede parecer complicado, sin embargo tenemos a nuestra disposición una serie de entornos de trabajo complementarios como Overleaf, TeXMaker o TeXStudio con los cuales podemos empezar a trabajar de una manera, rapida y fácil. Al trabajar con software libre tenemos ciertas ventajas, una de ellas es que contamos con una gran comunidad dispuesta a solucionarnos las dudas que surgan, podemos hacer uso de los recursos que otras personas comparten online gratuitamente y está disponible tanto para Windows como para MacOS y GNU/Linux.
+
+		¿Te gustaría aprender LaTeX y aprovechar todos sus beneficios?, en PROTECO tenemos un curso intersemestral especialmente diseñado para ti, complementa tu educación con nosotros y cambia la manera en que proyectas tus ideas.
+
+
+

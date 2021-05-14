@@ -1,0 +1,146 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{xcolor}		%Definir colores
+\usepackage[most]{tcolorbox} %Cajas tcolorbox
+\usepackage{multicol}	%Columnas
+\usepackage{graphicx}
+\usepackage{float} 		%Imagenes y tablas en columnas ([H])
+
+%Definicion de colores
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{non-photoblue}{rgb}{0.64, 0.87, 0.93}
+
+\title{Elementos de formato adicionales en \LaTeX}
+\author{David}
+\date{\today}
+
+\parskip = 10pt		%Espaciado entre párrafos
+\linespread{1.6}	%Espaciado entre líneas
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\section{Fuentes}
+		\ttfamily Este es un texto con la fuente typewriter.Este es un texto con la fuente typewriter.Este es un texto con la fuente typewriter.Este es un texto con la fuente typewriter.Este es un texto con la fuente typewriter.
+		
+		\sffamily Este es un texto con la fuente sans serif.
+		
+		\rmfamily Este es un texto con la fuente roman.
+		
+	\section {Cajas}
+		\subsection{mbox y makebox}
+		
+		\mbox{Este es un texto dentro de un mbox} 
+		
+		\makebox[0.8\textwidth][r]{Este texto se encuentra dentro de un makebox}
+		
+		\subsection{fbox y framebox}
+		
+		\fbox{Este es un texto dentro de un fbox.}
+		
+		\framebox[\textwidth][c]{Aqui hay un texto dentro de un framebox.}
+		
+		%\framebox[\textwidth][c]{Este va a ser un texto probablement muy largo y tal vez no quepa en mi framebox.Este va a ser un texto probablement muy largo y tal vez no quepa en mi framebox}
+		
+		\subsection{parbox}
+		
+		\parbox{0.5\textwidth}{Este va a ser un texto probablement muy largo y tal vez no quepa en mi framebox.Este va a ser un texto probablement muy largo y tal vez no quepa en mi framebox}
+		
+		Encerrando un parrafo en un framebox:
+		
+		\fbox{\parbox{10cm}{Aquí va a ir un párrafo muy largo, pero que ya cabe en mi framebox. tal vez.Aquí va a ir un párrafo muy largo, pero que ya cabe en mi framebox. tal vez.}}
+		
+		\subsection{Cajas con colores}
+		
+		\textcolor{applegreen}{Este es un texto de color verde.}
+		
+		\textcolor{brown}{Este es un texto de color café.}
+		
+		\colorbox{non-photoblue}{Este es un texto en una caja de color azul.}
+		
+		\fcolorbox{red!30}{green!25}{Este es un texto dentro de una caja verde con borde rojo.}
+		
+		\fcolorbox{blue}{applegreen!40}{\parbox{\textwidth}{Este es un texto dentro de una caja verde pero con borde azul.Este es un texto dentro de una caja verde pero con borde azul.Este es un texto dentro de una caja verde pero con borde azul.
+		
+		$$\int{dx}=x+C$$
+	}}
+		
+		\subsection{Paquete \ttfamily tcolorbox}
+		
+		\begin{tcolorbox}[
+				colback = orange!30, %color de fondo
+				colframe = red,		 %color de borde
+				arc = 5mm,			 %radio de arco (esquinas)
+				width = 0.7\textwidth, %ancho de la caja
+				height = 40pt,		 %altura de la caja
+				boxrule = 5pt,		 %grosor de borde de caja
+				enhanced jigsaw,	 %sombra y color de sombra
+				drop shadow = {green!30}
+			]
+			Texto en un colorbox simple.
+		\end{tcolorbox}
+	\section {Columnas}
+
+	Realizando columnas con \verb|\twocolumn|:
+	\twocolumn 
+
+	Lorem ipsum dolor sit amet consectetur adipiscing elit, cubilia etiam phasellus non integer curae potenti odio, eleifend parturient eget volutpat id velit. Litora cum hac aliquet pulvinar fermentum risus accumsan conubia orci magna, faucibus dictumst porta sodales tempor sagittis nunc nisi tempus scelerisque non, pretium viverra id laoreet donec eget aptent rhoncus tincidunt. Montes interdum mi cursus porta nullam fermentum sodales tempor, purus aptent natoque faucibus gravida hendrerit eget cum consequat, condimentum vestibulum placerat himenaeos imperdiet viverra habitant.
+		
+	Ultrices viverra lacus cursus velit cubilia posuere aliquet facilisi curae leo id suspendisse fringilla ultricies, rhoncus curabitur platea malesuada et mus integer phasellus etiam ac vehicula luctus sociosqu. Volutpat mus integer nisi sociis placerat turpis imperdiet natoque eros dui senectus tincidunt, condimentum habitasse orci ad venenatis proin tempor hac ornare nibh inceptos, blandit porta pharetra rhoncus faucibus tortor iaculis velit luctus suspendisse bibendum. Blandit aliquet aptent duis non nascetur posuere sem mauris fringilla, vulputate rhoncus a torquent vel dictumst nam varius volutpat ultricies, in montes mattis netus tempor turpis arcu himenaeos.
+		
+	Parturient integer at habitant conubia ad ut penatibus eget facilisis vel fringilla, senectus nam scelerisque libero porttitor pharetra lectus fames aliquam mattis, mauris dictum tellus purus quisque venenatis dictumst placerat mollis torquent. Iaculis lacus rutrum nibh aptent interdum cursus nunc sociis velit, penatibus lectus facilisis eget platea enim ullamcorper metus lacinia, commodo donec tristique sollicitudin urna ante congue natoque, eu primis euismod dapibus ut vivamus arcu dictum. Dis sem et aenean bibendum phasellus metus porttitor, turpis neque justo eros parturient magnis platea, quisque senectus potenti convallis donec commodo.
+	
+	Volviendo a una columna con \verb|\onecolumn|:
+	\onecolumn
+	
+	Lorem ipsum dolor sit amet consectetur adipiscing elit, cubilia etiam phasellus non integer curae potenti odio, eleifend parturient eget volutpat id velit. Litora cum hac aliquet pulvinar fermentum risus accumsan conubia orci magna, faucibus dictumst porta sodales tempor sagittis nunc nisi tempus scelerisque non, pretium viverra id laoreet donec eget aptent rhoncus tincidunt. Montes interdum mi cursus porta nullam fermentum sodales tempor, purus aptent natoque faucibus gravida hendrerit eget cum consequat, condimentum vestibulum placerat himenaeos imperdiet viverra habitant.
+	
+	\subsection{Paquete \ttfamily multicol}
+	
+	Manejando varias columnas.
+	
+	\noindent\rule{\textwidth}{2pt} %noindent evita la sangria/indentado
+	
+	\begin{multicols}{3}
+	
+	Lorem ipsum dolor sit amet consectetur adipiscing elit, cubilia etiam phasellus non integer curae potenti odio, eleifend parturient eget volutpat id velit. Litora cum hac aliquet pulvinar fermentum risus accumsan conubia orci magna, faucibus dictumst porta sodales tempor sagittis nunc nisi tempus scelerisque non, pretium viverra id laoreet donec eget aptent rhoncus tincidunt. Montes interdum mi cursus porta nullam fermentum sodales tempor, purus aptent natoque faucibus gravida hendrerit eget cum consequat, condimentum vestibulum placerat himenaeos imperdiet viverra habitant.
+
+	\begin{figure}[H] %fuerza a la figura a aparecer aquí, utilizar paquete float
+		\centering
+		\includegraphics[width=0.3\textwidth]{img/corgi}
+		\caption{Una figura en una columna}
+		\label{fig:corgi}
+	\end{figure}
+
+	\begin{figure*}[!htp]
+		\centering
+		\includegraphics[width=0.5\textwidth]{img/corgi}
+		\caption{Una figura en una columna}
+		\label{fig:corgi2}
+	\end{figure*}
+	
+	Lorem ipsum dolor sit amet consectetur adipiscing elit, cubilia etiam phasellus non integer curae potenti odio, eleifend parturient eget volutpat id velit. Litora cum hac aliquet pulvinar fermentum risus accumsan conubia orci magna, faucibus dictumst porta sodales tempor sagittis nunc nisi tempus scelerisque non, pretium viverra id laoreet donec eget aptent rhoncus tincidunt. Montes interdum mi cursus porta nullam fermentum sodales tempor, purus aptent natoque faucibus gravida hendrerit eget cum consequat, condimentum vestibulum placerat himenaeos imperdiet viverra habitant.
+
+
+	\end{multicols}
+
+	\noindent\rule{\textwidth}{2pt}
+	
+	Lorem ipsum dolor sit amet consectetur adipiscing elit, cubilia etiam phasellus non integer curae potenti odio, eleifend parturient eget volutpat id velit. Litora cum hac aliquet pulvinar fermentum risus accumsan conubia orci magna, faucibus dictumst porta sodales tempor sagittis nunc nisi tempus scelerisque non, pretium viverra id laoreet donec eget aptent rhoncus tincidunt. Montes interdum mi cursus porta nullam fermentum sodales tempor, purus aptent natoque faucibus gravida hendrerit eget cum consequat, condimentum vestibulum placerat himenaeos imperdiet viverra habitant.
+	
+	\section{Reglas}
+	
+	Un ejemplo de una regla
+	
+	Regla: \rule{\textwidth}{2pt}
+	
+	Otra regla:
+	
+	Regla:	\rule[-2mm]{100pt}{3pt} Texto despues de la regla.
+	
+	Un cuadrado con una regla:
+	\rule{5pt}{5pt}
+
+\end{document}

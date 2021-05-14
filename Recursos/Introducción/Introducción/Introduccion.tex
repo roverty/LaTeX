@@ -1,0 +1,178 @@
+\documentclass[10pt,xcolor={dvipsnames}]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+% Change the bar colors:
+\setbeamercolor{Feather}{fg=NavyBlue!20,bg=NavyBlue}
+% Change the color of the structural elements:
+\setbeamercolor{structure}{fg=NavyBlue}
+% Change the frame title text color:
+\setbeamercolor{frametitle}{fg=black!5}
+% Change the normal text colors:
+\setbeamercolor{normal text}{fg=black!75,bg=gray!5}
+%% Change the block title colors
+\setbeamercolor{block title}{use=Feather,bg=Feather.fg, fg=black!90} 
+
+
+% Change the logo in the upper right circle:
+%\renewcommand{\logofile}{example-grid-100x100pt} 
+% \renewcommand{\logoscale}{0.55}
+
+% Change the background image on the title and final page.
+% It stretches to fill the entire frame!
+% \renewcommand{\backgroundfile}{example-grid-100x100pt}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+\usepackage[utf8]{inputenc}			%Ajustar idioma: español
+\usepackage[spanish, es-tabla]{babel}
+\spanishdecimal{.}
+\usepackage[T1]{fontenc}
+% \usepackage{helvet}
+
+%% Load different font packages to use different fonts
+%% e.g. using Linux Libertine, Linux Biolinum and Inconsolata
+% \usepackage{libertine}
+% \usepackage{zi4}
+
+%% e.g. using Carlito and Caladea
+\usepackage{carlito}
+\usepackage{caladea}
+\usepackage{zi4}
+\usepackage{xcolor}
+\usepackage{soulutf8}
+%% e.g. using Venturis ADF Serif and Sans
+% \usepackage{venturis}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] 
+{ 
+      \textbf{Curso Intersemestral de LaTeX}
+}
+
+\subtitle[]
+{
+      \textbf{Introducción a \LaTeX y presentación del curso}
+}
+
+\author[Armando Rivera]
+{      Armando Rivera \\
+		rivera.armando997@gmail.com
+}
+
+\institute[]
+{%
+      Universidad Nacional Autónoma de México\\
+      Programa de Tecnología en Cómputo
+}
+
+\date{\today}
+
+
+\begin{document}
+\definecolor{c}{rgb}{1,0.5,0}
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+
+%-------------------------------------------------------
+\section{Presentación}
+%-------------------------------------------------------
+\begin{frame}{Instructores}
+\begin{itemize}
+	\item Instructor titular:\\Armando Rivera
+	\item Instructores Adjuntos:\\Francisco Pablo y Karina Flores
+	\item Instructor Auxiliar:\\Raymundo Pérez
+\end{itemize}
+\end{frame}
+\begin{frame}{Consideraciones}
+	\begin{itemize}
+		\item Se pasará lista a inicio de clase.
+		\item Se puede llegar a la hora que sea, siempre y cuando se ingrese al salón de
+		manera discreta.
+		\item NO consumir alimentos dentro del salón de clases.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Evaluación}
+\begin{center}
+	Tareas y ejercicios en clase: 100\%
+\end{center}
+	Para recibir constancia:
+	\begin{itemize}
+		\item 80\% mínimo de asistencia.
+		\item Calificación mínima de 8.
+		\item Realizar la encuesta al final del curso.
+	\end{itemize}
+\end{frame}
+\section{Introducción}
+\begin{frame}{¿Qué es LaTeX}
+	\LaTeX es un sistema de composición de textos (typesetting system) de alta
+	calidad que incluye características diseñadas para la producción de documentos
+	científicos y técnicos.
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{img/LaTeX}
+	\end{figure}
+\end{frame}
+\begin{frame}{TeX y LaTeX}
+L A T
+EX está basado en TEX, también un sistema
+de composición de textos, creado por Donald
+Knuth en 1978.
+TEX ofrece instrucciones básicas para el formato
+(tipo, tamaño de fuente, espaciado, entre otras)
+de un documento, L A TEX añade macros que
+facilitan esta tarea.
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{img/Donald}
+\end{figure}
+\end{frame}
+\begin{frame}{Ventajas de \LaTeX}
+\begin{itemize}
+	\item Permite al usuario enfocarse en el contenido y no en el formato.
+	\item Menor necesidad de interacción con una interfaz gráfica.
+	\item Multiplataforma.
+	\item Retrocompatible.
+	\item Separación de palabras (-)
+	\item Open Source
+\end{itemize}
+\end{frame}
+\begin{frame}{Entorno}
+	Antes de empezar a crear documentos con LaTeX, se requiere instalar el
+	siguiente software:
+	\begin{itemize}
+		\item Compilador: Se encarga de traducir nuestro código a un archivo pdf.
+		\begin{itemize}
+			\item TexLive (Windows y Linux) 
+			\item MikTex (Windows)
+			\item MacTex (Mac)
+		\end{itemize}
+		\item TexStudio (Windows, Linux, Mac)
+		\item TexMaker (Windows)
+		\item Overleaf (Online)
+	\end{itemize}
+\end{frame}
+
+
+
+{\1
+\begin{frame}[plain,noframenumbering]
+\finalpage{\huge\textbf{Happy \TeX ting!!}}
+\end{frame}}
+
+\end{document}

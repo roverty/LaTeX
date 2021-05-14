@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Tablas en \LaTeX}
+\date{}
+\begin{document}
+\maketitle
+Una tabla sencilla:
+
+\begin{table}
+\centering
+\caption{Una tabla}
+\begin{tabular}{|r||c|c|}
+	\hline
+	1	&	uno		&	one	\\	\hline
+	2	&			&	two	\\	
+	3	&	tres	&	three\\	\hline \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{c|p{300pt}}
+		tabla	&	Un texto muy largo que probablemente no quepa en la página.Un texto muy largo que probablemente no quepa en la página.\\ \hline
+		figura	&	Otro texto muy largo que probablemente tampoco quepa en la página.Un texto muy largo que probablemente no quepa en la página.\\
+	\end{tabular}
+\end{table}
+
+Crear una tabla que combine columnas:
+\begin{table}[h]
+	\begin{tabular}{|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Elementos}} \\ \hline
+		H	&	Hidrógeno	\\	\hline
+		O	&	Oxígeno		\\	\hline
+		S	&	Azufre		\\	\hline
+		Ta	&	Tantalio	\\	\hline
+	\end{tabular}
+\end{table}
+
+Otra tabla de ejemplo:
+\begin{table}[h]
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{5}{|c|}{\textbf{Título}}		\\ \hline
+		\multicolumn{4}{|c|}{Entradas}	&	Salida	\\ \hline
+		A	&	B	&	C	&	D		&	S		\\ \hline
+		0	&	0	&	0	&	1		&	1		\\ \hline
+		0	&	1	&	1	&	0		&	0		\\ \hline
+	\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{beamer}
+
+%\usetheme{Marburg}
+%\usetheme{Warsaw}
+\usetheme{metropolis}
+%\usetheme{jigsaw}
+
+\usecolortheme{dolphin}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\author{Armando Rivera}
+\date{\today}
+\title{Mi primera presentación con \LaTeX}
+\subtitle{Introducción}
+\institute[UNAM]{Universidad Nacional Autónoma de México\\Facultad de Ingenieía}
+
+\begin{document}
+%Titulo
+\begin{frame}
+	\maketitle
+\end{frame}
+	%Indice
+	\begin{frame}{Índice}
+		\tableofcontents
+	\end{frame}
+	\section{Introducción}
+	%Primer frame
+	\begin{frame}[c]{Introducción}
+		Esta es mi primera presentacion hecha con \LaTeX, con ayuda de la clase beamer.
+	\end{frame}
+	%Segundo frame
+	\begin{frame}
+		\begin{block}{Nota}
+			A continuación definimos la ecuación $$\int e^{x^2}dx$$ \pause
+		\end{block}
+		Aquí tiene que ir alguna explicación. \pause $$\dots$$ Concluyendo que $\dots$ \pause $$x=1$$
+	\end{frame}
+	
+%	{
+		%\usebackgroundtemplate{
+			%\includegraphics[width=\paperwidth, height=\textheight]{img/proteco}}
+			%\includegraphics[scale=0.5]{img/proteco}}
+			%\begin{frame}
+			%Contenido
+			%\end{frame}
+	%}
+	
+\end{document}

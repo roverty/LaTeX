@@ -1,0 +1,318 @@
+\documentclass[10pt,xcolor={dvipsnames}]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+% Change the bar colors:
+\setbeamercolor{Feather}{fg=NavyBlue!20,bg=NavyBlue}
+% Change the color of the structural elements:
+\setbeamercolor{structure}{fg=NavyBlue}
+% Change the frame title text color:
+\setbeamercolor{frametitle}{fg=black!5}
+% Change the normal text colors:
+\setbeamercolor{normal text}{fg=black!75,bg=gray!5}
+%% Change the block title colors
+\setbeamercolor{block title}{use=Feather,bg=Feather.fg, fg=black!90} 
+
+
+% Change the logo in the upper right circle:
+%\renewcommand{\logofile}{example-grid-100x100pt} 
+% \renewcommand{\logoscale}{0.55}
+
+% Change the background image on the title and final page.
+% It stretches to fill the entire frame!
+% \renewcommand{\backgroundfile}{example-grid-100x100pt}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+\usepackage[utf8]{inputenc}			%Ajustar idioma: español
+\usepackage[spanish, es-tabla]{babel}
+\spanishdecimal{.}
+\usepackage[T1]{fontenc}
+% \usepackage{helvet}
+
+%% Load different font packages to use different fonts
+%% e.g. using Linux Libertine, Linux Biolinum and Inconsolata
+% \usepackage{libertine}
+% \usepackage{zi4}
+
+%% e.g. using Carlito and Caladea
+\usepackage{carlito}
+\usepackage{caladea}
+\usepackage{zi4}
+\usepackage{xcolor}
+\usepackage{soulutf8}
+%% e.g. using Venturis ADF Serif and Sans
+% \usepackage{venturis}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] 
+{ 
+      \textbf{Curso semestral de LaTeX}
+}
+
+\subtitle[]
+{
+      \textbf{Formato y conceptos básicos de un documento}
+}
+
+\author[David Alejandro Silva López]
+{      David Alejandro Silva López \\
+		david.alejandro.proteco@gmail.com
+}
+
+\institute[]
+{%
+      Universidad Nacional Autónoma de México\\
+      Facultad de Ingeniería
+}
+
+\date{\today}
+
+
+\begin{document}
+\definecolor{c}{rgb}{1,0.5,0}
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+
+\begin{frame}{Contenido}{}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+\section{Estructura básica }
+%-------------------------------------------------------
+\begin{frame}{Estructura básica}{}
+%-------------------------------------------------------
+Un archivo de código en \LaTeX  estará conformado por una variedad de comandos que permitirán dar el formato deseado al documento.
+Dicho archivo debe tener una estructura mínima para poder ser procesada por el compilador.
+\begin{block}{Estructura mínima}
+	{\tt\textbackslash documentclass\{...\}\\
+		\textbackslash begin\{document\}\\
+		<contenido>\\
+		\ldots\\
+		\textbackslash end\{document\}\}}
+\end{block}
+\end{frame}
+
+\begin{frame}{Estructura básica}{Preámbulo}
+En la sección de código que abarca desde la línea
+{\tt \textbackslash documentclass\{...\}}\\
+hasta {\tt \textbackslash begin\{document\}}\\
+Contiene comandos que definen el tipo de documento, inclusión de paquetes, metadatos, configuración de página y variables o parámetros. 
+\end{frame}
+
+\begin{frame}{Estructura básica}{Clases de documentos}
+\begin{tabular}{l|c}
+	article & Artículos científicos, documentación, notas \\ 
+	book &  Libros\\ 
+	hitec & Especificaciones técnicas \\ 
+	proc & Actas (basadas en article) \\ 
+	report & Reportes, tesis, libros pequeños \\ 
+	letter & Cartas \\ 
+	beamer & Presentaciones de diapositivas (¡Como esta!) \\ 
+\end{tabular} 
+\end{frame}
+
+\begin{frame}{Estructura básica}{Parámetros del documento}
+\begin{tabular}{l|c}
+	{\tt\textbackslash author\{...\}} & Nombre del autor \\ 
+	{\tt\textbackslash title\{...\}} &  Título\\ 
+	{\tt\textbackslash date\{...\}} &  Fecha\\ 
+	{\tt\textbackslash usepackage\{p\}} &  Paquete a utilizar\\ 
+\end{tabular} 
+\end{frame}
+
+\begin{frame}{Estructura básica}{Contenido}
+
+En la sección de código que abarca desde la línea\\
+\begin{center}
+	{\tt\textbackslash begin\{document\}}\\
+\end{center}
+hasta\\
+\begin{center}
+	{\tt\textbackslash end\{document\}}\\
+\end{center}
+
+Esta sección contendrá, como su nombre lo dice, el contenido de nuestro documento, así como los comandos necesarios para dar el formato deseado, o bien, importar contenido de otros archivos.
+\end{frame}
+
+%-------------------------------------------------------
+\section{Formato de texto}
+%-------------------------------------------------------
+\begin{frame}{Formato de texto}
+%-------------------------------------------------------
+\begin{tabular}{lll}
+	Efecto & Texto corto & Texto largo \\ 
+	\hline
+	Normal& {\tt\textbackslash textup\{...\}} & {\tt\textbackslash upshape Texto} \\
+	\textbf{Negritas}& 	{\tt\textbackslash textbf\{...\}} & {\tt\textbackslash bfseries Texto} \\
+	\textit{Itálicas}& {\tt\textbackslash textit\{...\}} & {\tt\textbackslash itshape Texto} \\
+	\textsl{Inclinado}& {\tt\textbackslash textsl\{...\}} & {\tt\textbackslash slshape Texto} \\
+	\textsc{VERSALES} & {\tt\textbackslash textsc\{...\}} & {\tt\textbackslash scshape Texto} \\
+	\textcolor{c}{Color}& {\tt\textbackslash textcolor\{c\}\{...\}} & {\tt\textbackslash color\{c\} Texto} \\
+	\underline{Subrayado}& {\tt\textbackslash underline\{...\}} &  \\
+	\emph{Énfasis}& {\tt\textbackslash emph\{...\}} &  \\ 	
+\end{tabular} \\
+
+\textbf{Nota}
+
+El efecto de los comandos de texto largo permanece hasta el final del entorno en el que se llama o hasta que se llama a otro comando de tamaño.
+\end{frame}
+
+\begin{frame}{Formato de texto}{Incluyendo el paquete soul}
+\begin{center}
+	\begin{tabular}{ll}
+		Efecto & Comando \\
+		\hline
+		\st{Tachado} & {\tt\textbackslash st\{...\}}\\ 
+		\hl{Marcado} & {\tt\textbackslash hl\{...\}}\\
+		\so{Espaciado} & {\tt\textbackslash so\{...\}}\\
+		\ul{Subrayado} & {\tt\textbackslash ul\{...\}}\\   
+	\end{tabular}
+\end{center}
+\textbf{Nota}
+
+En nuestro caso (español), debido a que hacemos uso de acentos, vamos a incluir la paquetería soulutf8.
+\end{frame}
+
+\begin{frame}{Formato de texto}{Tamaño de texto}
+\begin{center}
+	\begin{tabular}{ll}
+		Tamaño & Comando \\
+		\hline
+		\tiny Texto & {\tt\textbackslash tiny Texto}\\ 
+		\scriptsize Texto & {\tt\textbackslash scriptsize Texto}\\
+		\footnotesize Texto & {\tt\textbackslash footnotesize Texto}\\
+		\small Texto & {\tt\textbackslash small Texto}\\
+		\normalsize Texto & {\tt\textbackslash normalsize Texto} \\
+		\large Texto & {\tt\textbackslash large Texto}\\
+		\Large Texto & {\tt\textbackslash Large Texto}\\
+		\LARGE Texto & {\tt\textbackslash LARGE Texto}\\
+		\huge Texto & {\tt\textbackslash huge Texto}\\
+		\Huge Texto & {\tt\textbackslash Huge Texto}\\
+	\end{tabular}
+\end{center}
+\textbf{Nota}
+
+El efecto de estos comandos permanece hasta el final del entorno en el que se llama o hasta que se llama a otro comando de tamaño.
+\end{frame}
+
+\section{Secciones, subsecciones y capítulos}
+\begin{frame}{Secciones, subsecciones y capítulos}{}
+Ayudan a mantener estructurado nuestro documento, facilitan el indexado y la creación de referencias. En la siguiente tabla se muestran todas las estructuras ordenadas por importancia (la más importante al inicio).
+\begin{center}
+	\begin{tabular}{ll}
+		Estructura & Comando \\
+		\hline
+		Parte & {\tt\textbackslash part\{...\} }\\ 
+		Capítulo & {\tt\textbackslash chapter\{...\} }\\
+		Sección & {\tt\textbackslash sect\textit{}ion\{...\} }\\
+		Subsección & {\tt\textbackslash subsection\{...\} }\\
+		Subsubsección & {\tt\textbackslash subsubsection\{...\} }\\
+		Párrafo & {\tt\textbackslash paragraph\{...\} }\\
+		Subpárrafo & {\tt\textbackslash subparagraph\{...\} }\\
+	\end{tabular}
+\end{center}
+\textbf{Nota}
+
+Las estructuras {\tt\textbackslash part\{\} } y {\tt\textbackslash chapter\{\} }solo se encuentran disponibles en la clase book y report.
+\end{frame}
+
+\section{Caracteres especiales}
+\begin{frame}{Caracteres especiales}{}
+En \LaTeX tenemos 10 caracteres reservados para el uso de comandos o para alg´un uso especial.
+\begin{center}
+	\begin{tabular}{ll}
+		Caracter & Uso \\
+		\hline
+		{\tt\textbackslash } & Indicador de comando\\ 
+		{\{\}} & Delimitadores\\
+		{\#} &  Nombrar argumentos de comando\\
+		{\&}& Separa columnas de tabla\\
+		{\%}& Comentarios \\
+		{$\sim$}& Evita separación de palabras\\
+		{\$ \textasciicircum \_}& Fórmulas matemáticas\\
+	\end{tabular}
+\end{center}
+\textbf{Nota}
+Para poder escribirlos, se le antecede un caracter de escape: {\textbackslash}.\\
+Ej: para escribir {\%} se usa \textbackslash{\%} .
+\end{frame}
+
+\section{Listas}
+\begin{frame}{Listas}{}
+Un elemento muy común en un documento suele ser una lista
+de elementos.\\
+En \LaTeX, la creación de listas es muy sencilla, se tienen los entornos enumerate e itemize, que dan el formato necesario para crear listas numeradas y no enumeradas, respectivamente. Cada elemento de la lista se identifica con el comando \textbackslash item.
+\end{frame}
+
+\begin{frame}[fragile]{Listas}{Ejemplos}
+\begin{exampleblock}{Ejemplo}
+	\begin{verbatim}
+		\begin{itemize}
+			\item Un elemento de la lista
+			\item Otro elemento de la lista
+		\end{itemize}
+	\end{verbatim}
+\end{exampleblock}
+
+\begin{block}{Resultado}
+	\begin{itemize}
+		\item Un elemento de la lista
+		\item Otro elemento de la lista
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Listas}{Ejemplos}
+\begin{exampleblock}{Ejemplo}
+	\begin{verbatim}
+	\begin{enumerate}
+		\item Primer elemento
+		\item Segundo elemento
+	\end{enumerate}
+	\end{verbatim}
+\end{exampleblock}
+
+\begin{block}{Resultado}
+	\begin{enumerate}
+		\item Primer elemento
+		\item Segundo elemento
+	\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Secuencias especiales y otros comandos}
+	\begin{enumerate}[a)]
+		\item {\tt\textbackslash newline} realiza un salto de línea
+		\item {\tt\textbackslash newpage} inserta una página nueva
+		\item {\tt\textbackslash ver|...|} inserta el texto que está dentro (útil para código)
+		\item {\tt\textbackslash LaTeX} inserta \LaTeX
+		\item {\tt\textbackslash TeX} inserta \TeX 
+		\item {\tt\textbackslash today} inserta la fecha de hoy
+	\end{enumerate}
+\end{frame}
+
+{\1
+\begin{frame}[plain,noframenumbering]
+\finalpage{Una vez conociendo la teoría, estamos listos. ¡Manos a la obra!}
+\end{frame}}
+
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+	\begin{tikzpicture}
+		\node {Padre} 
+			child {node{$Hijo_1$}}
+			child {node {$Hijo_2$}
+				child {node{$Hijo_{2,1}$}}	
+		};
+	\end{tikzpicture}
+\end{document}
