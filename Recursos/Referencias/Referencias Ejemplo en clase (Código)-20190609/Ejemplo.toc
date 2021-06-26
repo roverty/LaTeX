@@ -1,9 +1,0 @@
-\babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}
-\contentsline {subsection}{\numberline {1.1}Marco te\IeC {\'o}rico}{3}
-\contentsline {subsection}{\numberline {1.2}Demostraciones}{4}
-\contentsline {section}{\numberline {2}Desarrollo}{4}
-\contentsline {subsection}{\numberline {2.1}Mediciones}{5}
-\contentsline {subsection}{\numberline {2.2}Evidencia fotogr\IeC {\'a}fica}{6}
-\contentsline {subsection}{\numberline {2.3}C\IeC {\'a}lculos}{6}
-\contentsline {section}{\numberline {3}Conclusiones}{7}

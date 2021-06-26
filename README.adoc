@@ -1,0 +1,67 @@
+= LaTeX
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 25.06.2021
+:toc: 
+:toc-placement!:
+:toclevels: 4                                          
+:toc-title: Contenido
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+Repositorio con material para el curso de `LaTeX`
+
+image::latex-logo.png[logo]
+
+== Temario 
+
+. *Introducción*
+.. ¿Qué es LaTeX?
+.. Compiladores para LaTeX
+.. Editores para LaTeX
+.. Ventajas y desventajas de LaTeX
+... Online (Overleaf)
+... IDE's offline (TexMaker,  TexStudio, ...)
+. *Formato básico para un documento*
+.. Tipos de documentos (Books, Article, Report, Letter,...)
+.. Abstract
+.. Formato de texto (párrafos, alineación de texto)
+.. Listas (no ordenada, ordenada, anidada,etc.)
+.. Caracteres especiales
+.. Saltos de línea y página
+.. Títulos, capítulos, secciones, ...
+.. Imágenes
+. *Fundamentos para matemáticas y ciencia*
+.. Ecuaciones y símbolos matemáticos
+.. Algoritmos y pseudocódigo (code fences)
+. *Tablas y gráficos*
+. *Formato avanzado*
+.. Configuración de página (indices:
+`\tableofcontents`, `\listoffigures`, `\listoftables`)
+.. Multicolumnas
+.. Espaciado
+.. Cajas y reglas
+.. Headers y footers
+. *Creación de presentaciones*
+. *Creación de figuras*
+
+== Documentación
+
+Ligas de la documentación oficial y no oficial de `LaTeX`:
+
+* https://www.latex-project.org/help/documentation/[LaTeX Project (oficial)]
+* https://www.overleaf.com/learn[Overleaf (no oficial)]
+
+Otras ligas de interés:
+
+* https://github.com/rhodstar/latex-templates[Mi repositorio de plantillas]
+* https://www.read.seas.harvard.edu/~kohler/latex.html[Buenas prácticas] 
++
+image::good-practises.png[]
