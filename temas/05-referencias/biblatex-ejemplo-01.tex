@@ -1,0 +1,18 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[
+  backend=bibtex,
+  %style=alphabetic
+  %style=authoryear-ibid
+  %citestyle=authoryear
+  citestyle=authoryear
+]{biblatex}
+
+\bibliography{sample}
+
+\begin{document}
+Let's cite! Einstein's journal paper~\parencite{einstein} and Dirac's
+book~\parencite{dirac} are physics-related items. 
+
+\printbibliography%Prints bibliography
+
+\end{document}

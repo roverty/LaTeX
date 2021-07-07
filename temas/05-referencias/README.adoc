@@ -1,0 +1,172 @@
+= Referencias y citas
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 29.06.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+
+Las citas, referencias y bibliografía nunca pueden faltar en ningún trabajo.
+
+toc::[]
+
+=== Usando el sistema incorporado (built-in)
+
+.Maneras de hacer citas
+* `cite{bibitem}`
+* `cite[p.~215]{bibitem}`
+* `cite{bibitem1,bibitem2}`
+
+Para insertar la bibliografía:
+
+[source,tex]
+----
+\begin{thebibliography}{9} %<1>
+  \bibitem{savage} 
+    Savage, Jesús. \textit{Redes neuronales} en 
+    \texttt{https://biorobotics.fi-p.unam.mx/\\wp-content/uploads/Courses/\\
+    reconocimiento\_de\_patrones/2021-2/\\lecciones/%
+    leccion12\_reconocimiento\\\_de\_patrones\_2021-2.pdf}
+  \bibitem{ibm}
+    IBM. \textit{El modelo de redes  neuronales} en 
+    \texttt{https://www.ibm.com/docs/es/spss-modeler/\\
+    SaaS?topic=networks-neural-model}
+  \bibitem[minksy85]{minksy} This is reference from Minksy
+
+\end{thebibliography}
+----
+<1> `{9}` representa que se pueden poner máximo 9 referencias, `{56}`
+representaría que se puede poner máximo 99 referencias. Realmente solo una ayuda
+para el compilador.
+
+Se puede modificar la alineación de los *items* de la bibliografía.
+
+[source,tex]
+----
+\addtolength{\leftmargin}{0.2in}
+\setlength{\itemindent}{-0.2in}
+----
+
+=== Usando `BibTeX`
+
+BibTeX es un ecosistema provisto por LaTeX para el manejo de la información
+relacionada con la bibliografía.
+
+Una base de datos _BibTeX_ se almacena como un archivo `.bib`. Es un archivo de
+texto plano, por lo que se puede ver y editar fácilmente. La estructura
+del archivo también es bastante simple. Un ejemplo de una entrada BibTeX:
+
+[source,tex]
+----
+@article{greenwade93,
+    author  = "George D. Greenwade",
+    title   = "The {C}omprehensive {T}ex {A}rchive {N}etwork ({CTAN})",
+    year    = "1993",
+    journal = "TUGBoat",
+    volume  = "14",
+    number  = "3",
+    pages   = "342--351"
+}
+----
+
+==== ¿Cómo compilar utilizando `BibTeX`?
+
+.Pasos para compilar un archivo que utilice `BibTeX`
+. `pdflatex` latex_source_code.tex
+. `bibtex` latex_source_code.aux
+. `pdflatex` latex_source_code.tex
+. `pdflatex` latex_source_code.tex
+
+_Se puede omitir las extensiones_
+
+Explicación ::
+En la primera pasada se compilará y se encontrar referencias indefinidas. Luego
+se compilará las referencias bibliográficas. Después, con las referencias
+generadas se volverá a compilará el archivo y se detectará que se han cambiado
+algunas referencias y por que se deberá volver a compilar.
+
+==== Ejemplos
+
+===== Ejemplo básico utilziando `bibtex`
+
+Este ejemplo esta diseñado para funcionar con *bibtex*
+
+[source,tex]
+----
+\documentclass[letterpaper,10pt]{article}
+\usepackage[
+  backend=bibtex
+]{biblatex}
+\bibliography{sample}
+
+\begin{document}
+Let's cite! Einstein's journal paper \cite{einstein} and Dirac's
+book \cite{dirac} are physics-related items. 
+
+\printbibliography
+
+\end{document}
+----
+
+===== Ejemplo 03: Estilo Harvard
+
+Observese el uso de 
+
+* `parencite` para imprimir correctamente en estilo *Harvard*
+
+[source,tex]
+----
+\documentclass[letterpaper,10pt]{article}
+\usepackage[
+  backend=bibtex,
+  %style=alphabetic
+  style=authoryear-ibid
+]{biblatex}
+
+\bibliography{sample}
+
+\begin{document}
+Let's cite! Einstein's journal paper~\parencite{einstein} and Dirac's
+book~\parencite{dirac} are physics-related items.
+
+\printbibliography%Prints bibliography
+
+\end{document}
+----
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage{natbib}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+Let's cite! Einstein's journal paper~\citep{einstein} and Dirac's
+book~\citep{dirac} are physics-related items.
+
+%\printbibliography%Prints bibliography
+\bibliography{sample}
+
+\end{document}
+
+===== Ejemploo utilizando `biber`
+
+Este ejemplo esta diseñado para funcionar con *biber*
+
+[source,tex]
+----
+\documentclass[letterpaper,10pt]{article}
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+
+\begin{document}
+Let's cite! Einstein's journal paper \cite{einstein} and Dirac's
+book \cite{dirac} are physics-related items. 
+
+\printbibliography
+
+\end{document}
+----
+
+
+//TODO:- Include Vancouver
