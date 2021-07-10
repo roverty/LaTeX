@@ -135,6 +135,10 @@ book~\parencite{dirac} are physics-related items.
 \end{document}
 ----
 
+===== Ejemplo utilizando `natbib`
+
+[source,tex]
+----
 \documentclass[letterpaper,10pt]{article}
 \usepackage{natbib}
 
@@ -148,6 +152,7 @@ book~\citep{dirac} are physics-related items.
 \bibliography{sample}
 
 \end{document}
+----
 
 ===== Ejemploo utilizando `biber`
 
@@ -170,3 +175,12 @@ book \cite{dirac} are physics-related items.
 
 
 //TODO:- Include Vancouver
+
+=== Referencias y bibliografía
+
+* https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management[LaTeX/Biblbiography
+Management, WikiBooks]
+* https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX[Bibliography
+management in LaTeX, Overleaf]
+%https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib
+%https://www.reed.edu/cis/help/LaTeX/bibtexstyles.html
