@@ -49,9 +49,9 @@ También es posible expresar las coordenadas de manera *relativa*, es decir,
 tomando como referencia un punto anterior. Para ello se deben usar `++`:
 
 [source,tex]
-====
+----
 ++(2,0)
-====
+----
 
 == Paths
 
@@ -65,9 +65,9 @@ terminar con punto y coma
 image::paths.png[]
 
 [source,tex]
-====
+----
 \path[<option>]<specification>
-====
+----
 
 Existen varios tios de _paths_
 
@@ -102,10 +102,10 @@ figura es creada.
 Los nodos se utilizan dentro de los comandos `path` (`\draw`, `drawfill`, ...) y
 la sintaxis para incluirlos es la siguiente.
 
-[source,sh]
-====
+[source,tex]
+----
 node[<option>](<name>){ <text> } %<1>
-====
+----
 <1> `(<name>)` es opcional, simplemente es para poder hacer referencia al nodo
 
 Cuando se crea un nodo se centra en la coordenada por default. Sin embargo, con
@@ -128,11 +128,10 @@ También se puede utilizar `node[pos=<valor>]`, en donde `<valor>` esta entre 0 
 de cada comando.
 
 [source,tex]
-====
+----
 \node[<options>](<name>) at (<coordinate>){<text>};
-
 \coordinate[<options>](<name>) at (<coordinate>);
-====
+----
 
 
 == Ejemplos
