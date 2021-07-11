@@ -1,0 +1,154 @@
+= Tikz
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+Tikz significa _Tikz is not a Drawing Program_, es una capa de _frontend_ con
+una sintaxis especial que hace el uso de *PGF* más fácil.
+
+
+toc::[]
+
+== Introducción 
+
+TikZ y PGF son paquetes de Tex para crear gráficos de manera programtica.
+
+PGF ("Portable Graphics Format") es la capa básica que provee un conjunto de
+comando para producir gráficos.
+
+Se puede hacer una analogía pensando que Tikz es LaTex y los sistemas previos
+(`picture`, `epic`, `pstricks`, `metapost`) son TeX
+
+image::tikz.png[]
+
+== Sistema de coordenadas
+
+Para construir figuras se utilizan coordenadas, en las que se buscan
+localización los vértices de nuestro gráfico, la coordenadas se pueden dar en:
+
+* Coordenadas cartesianas `(1cm,2cm)`
+* Coordenadas polares `(30:1cm)`
+
+image::coords.jpg[]
+
+También es posible expresar las coordenadas de manera *relativa*, es decir,
+tomando como referencia un punto anterior. Para ello se deben usar `++`:
+
+[source,tex]
+====
+++(2,0)
+====
+
+== Paths
+
+Teniendo en cuenta que la filosofía de TikZ se basa en _que dibujar_ en lugar de
+_cómo dibujarlo_ (como en el caso de sistemas previos), por lo que se define el
+concepto de *path* para crear líneas, geometrías y colores.
+
+Un `path` es una serie de segmentos rectos y curvos. Las instrucciones deben
+terminar con punto y coma
+
+image::paths.png[]
+
+[source,tex]
+====
+\path[<option>]<specification>
+====
+
+Existen varios tios de _paths_
+
+Path actions ::
+  * `draw`
+  * `fill`
+  * `pattern`
+  * `shade`
+  * etc.
+
+Geometric path actions::
+  * `rotate=<angle indegres>`
+  * `xshift=<length>`
+  * `yshift=<length>`
+  * `scale=<factor>`
+
+Color::
+  * `color=<color name>`
+  * `drwa=<line color>`
+  * `opacity=<factor>`
+
+== Nodes
+
+image::nodes.png[]
+
+Los nodos son simples textos (o rectángulos o círculos) que se posicional al
+lado de una coordenada.
+
+Los nodos no son parte del `path`, sino que se añaden posteriormente a que la
+figura es creada.
+
+Los nodos se utilizan dentro de los comandos `path` (`\draw`, `drawfill`, ...) y
+la sintaxis para incluirlos es la siguiente.
+
+[source,sh]
+====
+node[<option>](<name>){ <text> } %<1>
+====
+<1> `(<name>)` es opcional, simplemente es para poder hacer referencia al nodo
+
+Cuando se crea un nodo se centra en la coordenada por default. Sin embargo, con
+la opción `align` se puede cambiar esto. De la siguiente forma.
+
+* `node[above]` o `node[north]`
+* `node[below]` o `node[south]`
+* `node[left]` o `node[east]`
+* `node[right]` o `node[west]`
+
+También se puede utilizar `node[pos=<valor>]`, en donde `<valor>` esta entre 0 y
+1.
+
+* 0 representa la coordenada anterior
+* 1 representa la coordenada actual
+
+=== Coordinate
+
+`coordinate` simplemente es un nodo sin texto. Como se puede ver en la sintaxis
+de cada comando.
+
+[source,tex]
+====
+\node[<options>](<name>) at (<coordinate>){<text>};
+
+\coordinate[<options>](<name>) at (<coordinate>);
+====
+
+
+== Ejemplos
+
+Los ejemplos se encuentrar en el archivo `.tex`
+
+image::tikz-examples.gif[]
+
+== Cosas que no vimos pero que son interesantes
+
+* Se pueden hacer ciclos for 
+* Creacion de estilos en una sección aparte 
+* `tikzlibrary`
+
+== Bibliografía y referencias
+
+* https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ[PGF/TikZ]
+* https://www.overleaf.com/learn/latex/TikZ_package[TikZ_package, Overleaf]
+* https://texample.net/tikz/examples/[Ejemplos de TikZ]
