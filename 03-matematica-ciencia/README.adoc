@@ -27,7 +27,7 @@ toc::[]
 //b. Matrices
 //c. Algoritmos y pseudocódigo
 
-TODO:- Revisar página 64 libro
+//TODO:- Revisar página 64 libro
 
 == Tabla se símbolos
 
