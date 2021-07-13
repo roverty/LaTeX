@@ -77,6 +77,12 @@ image::tama-letras.png[]
 .Diferencia entre 
 * `\section{}`
 * `\section*{}`
+* `\tableofcontents`
+
+[source,tex]
+----
+\addcontentsline{toc}{section}{Bibliografía}
+----
 
 *Tamaño del texto de las secciones*
 

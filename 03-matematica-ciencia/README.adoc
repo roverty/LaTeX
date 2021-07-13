@@ -1,0 +1,54 @@
+= Fundamentos para matemáticas y ciencias
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+Tikz significa _Tikz is not a Drawing Program_, es una capa de _frontend_ con
+una sintaxis especial que hace el uso de *PGF* más fácil.
+
+
+toc::[]
+
+//a. Ecuaciones y símbolos matemáticos
+//b. Matrices
+//c. Algoritmos y pseudocódigo
+
+TODO:- Revisar página 64 libro
+
+== Tabla se símbolos
+
+=== Letras griegas
+
+image:griegas.png[]
+
+
+=== Operadores binarios
+
+image::binarios.png[]
+
+=== Operadores relacionales
+
+image::relacionales.png[]
+
+=== Operadores de negación
+image::neg-01.png[]
+
+image::neg-02.png[]
+
+=== Operadores `amssymb`
+
+image::amssymb.png[]

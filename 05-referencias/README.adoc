@@ -173,6 +173,13 @@ book \cite{dirac} are physics-related items.
 \end{document}
 ----
 
+=== Agregar a la tabla de contenido
+
+
+[source,tex]
+----
+\addcontentsline{toc}{section}{Bibliografía}
+----
 
 //TODO:- Include Vancouver
 
