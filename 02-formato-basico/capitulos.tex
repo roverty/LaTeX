@@ -1,0 +1,33 @@
+% Preambulo del documento
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+
+\usepackage[top=2cm,bottom=3cm,left=1.5cm,right=1.5cm]{geometry}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\Large\bfseries}
+
+% Cuerpo del documento.
+\begin{document}
+
+\tableofcontents
+
+%\part{Curso de matemáticas}
+  %\chapter{Teoria} % definición de capitulo
+    \addcontentsline{toc}{section}{Los números reales}
+    \section*{Los números enteros}
+      \lipsum[1]
+      \subsection*{Definición}
+      \lipsum[1]
+      \subsection*{Ejemplos}
+      \lipsum[1]
+    \section{Fracciones}
+      \subsection{Definición}
+      \lipsum[1]
+      \subsection{Ejercicios}
+      \lipsum[1]
+
+\end{document}

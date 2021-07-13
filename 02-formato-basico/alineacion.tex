@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+\usepackage{ragged2e}
+
+\begin{document}
+
+%Justificado
+\lipsum
+\newpage
+
+%Izquierda
+\raggedright
+\lipsum
+\newpage
+
+%Derecha
+\raggedleft
+\lipsum
+\newpage
+
+%Izquierda
+\begin{flushleft}
+  \lipsum
+\end{flushleft}
+
+\newpage
+
+%Derecha
+\begin{flushright}
+  \lipsum
+\end{flushright}
+
+\newpage
+
+\centering
+\lipsum
+\newpage
+
+\begin{center}
+  \lipsum
+\end{center}
+
+\end{document}
