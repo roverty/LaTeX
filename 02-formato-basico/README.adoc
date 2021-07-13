@@ -136,6 +136,12 @@ image::tama-letras.png[]
 \usepackage{landscape, centering,headsep=20pt,top=0.8in,bottom=0.8in}{geometry}
 ----
 
+== Imágenes
+
+* `\includegraphics[scale=0.8]{image}`
+* `\includegraphics[width=0.8\textwidth]{image}`
+* `\graphicspath{{assets}}`
+
 == Convenciones de LaTeX
 
 * `{}` Argumentos del comando
