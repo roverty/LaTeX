@@ -1,0 +1,149 @@
+= Formato básico
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+toc::[]
+
+//a. Formato de texto (párrafos, alineación de textos)
+//b. Listas (no ordenadas, ordenadas, anidadas, etc.)
+//c. Caracteres especiales
+//d. Saltos de línea y página
+//e. Títulos, capítulos y secciones
+//f. Imágenes
+
+== Códificación
+
+[source,tex]
+----
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+----
+
+== Idioma
+
+Para *article*
+
+[source,tex]
+----
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\refname}{Bibliografía}
+----
+
+Para *book*
+
+[source,]
+----
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\chapternamea}{Capítulo}
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\bibname}{Bibliografía}
+----
+
+== Caracteres especiales
+
+image::especial.png[]
+
+== Tamaño de letra
+
+image::tama-letras.png[]
+
+== Secciones y capítulos
+
+.Diferencia entre 
+* `\section{}`
+* `\section*{}`
+
+*Tamaño del texto de las secciones*
+
+[source,tex]
+----
+\titleformat*{\section}{\Large\bfseries}
+----
+
+== Párrafos
+
+[source,tex]
+----
+\noident
+
+\parskip=5mm
+\parident=0mm
+----
+
+== Márgenes
+
+*Opción 1*
+
+[source,tex]
+----
+\usepackage{anysize}
+
+% Izquierda, derecha, arriba, abajo
+\marginsize{1cm}{1cm}{1cm}{2cm}
+----
+
+*Opción 2*
+
+[source,tex]
+----
+\usepackage[top=1cm,bottom=3cm,left=2cm,right=2cm]{geometry}
+
+\usepackage[total={18cm,21cm}, top=2cm,left=2cm]{geometry}
+----
+
+*Opción 3*
+
+[source,tex]
+----
+\textheight = 21cm
+\textwidth = 18cm
+\topmargin = -2cm
+\oddsidemargin = -2cm
+----
+
+== Orientación
+
+[source,tex]
+----
+%Opción 1
+\usepackage{lscape}
+}%Opción 2
+\usepackage{landscape, centering,headsep=20pt,top=0.8in,bottom=0.8in}{geometry}
+----
+
+== Convenciones de LaTeX
+
+* `{}` Argumentos del comando
+* `[]` Argumentos OPCIONALES del comando
+
+== Bibliografía y referencias
+
+* https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX[Creating a
+document in LaTeX, Overleaf]
+* https://www.overleaf.com/learn/latex/Paragraph_formatting[Paragraph
+formatting, Overleaf]
