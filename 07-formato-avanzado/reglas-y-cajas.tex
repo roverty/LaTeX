@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}		%Definir colores
+\usepackage[most]{tcolorbox} %Cajas tcolorbox
+%Definicion de colores
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{non-photoblue}{rgb}{0.64, 0.87, 0.93}
+\parindent=0mm
+\parskip=6mm
+\begin{document}
+  %\rule{\textwidth}{2pt}
+  %\rule[-2mm]{100pt}{3pt} Texto despues de la regla.
+  %\rule{5pt}{5pt}
+\begin{minipage}[t]{0.1\textwidth}
+
+  Hola\\
+
+  \hspace{3mm}\rule{2pt}{0.8\textheight} \rule{2pt}{0.8\textheight}
+
+  Adios
+\end{minipage}
+%\hfill
+\hspace{2cm}
+\begin{minipage}[t]{0.6\textwidth}
+  \tableofcontents
+\end{minipage}
+
+\newpage
+
+  \section {Cajas}
+		\subsection{mbox y makebox}
+		
+		\mbox{Este es un texto dentro de un mbox} 
+		
+		\makebox[0.8\textwidth][r]{Este texto se encuentra dentro de un makebox}
+		
+		\subsection{fbox y framebox}
+		
+		\fbox{Este es un texto dentro de un fbox.}
+		
+		\framebox[\textwidth][c]{Aqui hay un texto dentro de un framebox.}
+		
+    %\framebox[\textwidth][c]{Este va a ser un texto probablement muy largo y
+    %tal vez no quepa en mi framebox.Este va a ser un texto probablement muy
+    %largo y tal vez no quepa en mi framebox}
+		
+		\subsection{parbox}
+		
+    \parbox{0.5\textwidth}{Este va a ser un texto probablement muy largo y tal
+    vez no quepa en mi framebox.Este va a ser un texto probablement muy largo y
+    tal vez no quepa en mi framebox}
+		
+		Encerrando un parrafo en un framebox:
+		
+    \fbox{\parbox{10cm}{Aquí va a ir un párrafo muy largo, pero que ya cabe en
+    mi framebox. tal vez.Aquí va a ir un párrafo muy largo, pero que ya cabe en
+    mi framebox. tal vez.}}
+		
+		\subsection{Cajas con colores}
+		
+		\textcolor{applegreen}{Este es un texto de color verde.}
+		
+		\textcolor{brown}{Este es un texto de color café.}
+		
+		\colorbox{non-photoblue}{Este es un texto en una caja de color azul.}
+		
+    \fcolorbox{red!30}{green!25}{Este es un texto dentro de una caja verde con
+    borde rojo.}
+		
+    \fcolorbox{blue}{applegreen!40}{\parbox{\textwidth}{Este es un texto dentro
+    de una caja verde pero con borde azul.Este es un texto dentro de una caja
+    verde pero con borde azul.Este es un texto dentro de una caja verde pero con
+    borde azul.
+		
+		$$\int{dx}=x+C$$
+	}}
+		
+		\subsection{Paquete \ttfamily tcolorbox}
+		
+		\begin{tcolorbox}[
+				colback = orange!30, %color de fondo
+				colframe = red,		 %color de borde
+				arc = 5mm,			 %radio de arco (esquinas)
+				width = 0.7\textwidth, %ancho de la caja
+				height = 40pt,		 %altura de la caja
+				boxrule = 5pt,		 %grosor de borde de caja
+				enhanced jigsaw,	 %sombra y color de sombra
+				drop shadow = {green!30}
+			]
+			Texto en un colorbox simple.
+		\end{tcolorbox}
+
+\end{document}

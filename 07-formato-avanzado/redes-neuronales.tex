@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+
+\newcommand*\circleitem[1]{
+  \begin{tikzpicture}[baseline=(C.base)]
+    \node[draw,circle,inner sep=1pt,minimum size=3ex](C) {#1};
+  \end{tikzpicture}
+}
+\begin{document}
+
+\begin{enumerate}[label=\protect\circleitem{\Alph*}]
+  \item Hola
+\end{enumerate}
+
+\url{https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX}
+
+\href{https://www.overleaf.com/learn/latex/Creating_a_document_in_LaTeX}{Link
+formateado}
+  
+\end{document}

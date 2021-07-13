@@ -1,0 +1,142 @@
+= Formato avanzado
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+toc::[]
+
+== Más sobre listas
+
+*Viñetas personalizadas*
+
+[source,tex]
+----
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\newcommand*\circleitem[1]{
+  \begin{tikzpicture}[baseline=(C.base)]
+    \node[draw,circle,inner sep=1pt,minimum size=3ex](C) {#1};
+  \end{tikzpicture}
+}
+\begin{document}
+
+\begin{enumerate}[label=\protect\circleitem{\Alph*}]
+  \item Hola
+\end{enumerate}
+  
+\end{document}
+----
+
+*Enumeración en cajas*
+
+[source,tex]
+----
+% Ejemplo de receta de cocina?
+\begin{enumerate}
+  \item [\fbox{1.}] Elemento 1
+  \item [\fbox{2.}] Elemento 2
+\end{enumerate}
+----
+
+*Separación entre cada elemento de la lista*
+
+[source,tex]
+----
+\setlength\itemsep{2.5cm}
+----
+
+*Personalización de números*
+
+[source,tex]
+----
+\renewcommand{\labelenumi}{\Roman{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\alph{enumiii}.}
+\renewcommand{\labelenumiv}{$bullet$}
+----
+
+
+[source,tex]
+----
+\usepackage{enumitem}
+\begin{enumerate}[label=\emph{\alph*}]
+
+% RESUMEN LA CUENTA ANTERIOR
+\begin{enumerate}[label=\emph{\alph*},resume]
+----
+
+== Creación de comandos 
+
+* https://www.overleaf.com/learn/latex/Commands[Commands, Overleaf]
+
+== Creación de ambientes
+
+* https://www.overleaf.com/learn/latex/Environments[Environments, Overleaf]
+
+== Multiples columnas
+
+* https://www.overleaf.com/learn/latex/Multiple_columns[Multiple columns,
+Overleaf]
+
+== Fuentes
+
+image::fonts-basico.png[]
+
+* https://www.overleaf.com/learn/latex/Font_typefaces[Font typefaces, Overleaf]
+* https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles[Font
+sizes, families and sytles, Overleaf]
+//https://www.overleaf.com/learn/latex/XeLaTeX
+
+TODO:- Revisar página 58 libro
+
+[source,tex]
+----
+\renewcommand{\familydefault}{\sfdefault}
+----
+
+== Configuración de página
+
+* https://www.overleaf.com/learn/latex/Page_numbering[Page numbering, Overleaf]
+
+== Headers y footers
+
+* https://www.overleaf.com/learn/latex/Headers_and_footers[Headers and footers,
+Overleaf]
+
+//== Sistemas de escritura
+
+== Espaciado
+
+* https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces[Line breaks
+and blank spaces]
+//Medskip
+
+== Cajas y reglas
+
+* https://www.docx2latex.com/tutorials/boxes-comments-LaTeX.html/[Boxes,
+docx2latex]
+
+== Contadores
+
+https://www.overleaf.com/learn/latex/Counters[Counters, Overleaf]
+
+== Hipervinculos
+
+https://www.overleaf.com/learn/latex/Hyperlinks[Hyperlinks]
