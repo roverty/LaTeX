@@ -1,0 +1,28 @@
+= Fundamentos para matemáticas y ciencias
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+Tikz significa _Tikz is not a Drawing Program_, es una capa de _frontend_ con
+una sintaxis especial que hace el uso de *PGF* más fácil.
+
+
+toc::[]
+
+(tablas mulipágina, combinación de filas y/o columnas, colores en tablas),
+(posicionamiento de tablas e imágenes utilizando figure, wrapfigure)
+
