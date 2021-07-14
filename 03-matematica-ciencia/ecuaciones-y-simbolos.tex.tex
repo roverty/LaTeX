@@ -1,0 +1,328 @@
+\documentclass{article} %O report o book
+
+%Paquetes vistos en la clase pasada
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+%Paquetes que nos permitirán la inserción de ecuaciones y símbolos
+%matemáticos en LaTeX
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym,cancel}
+\usepackage{esvect}
+\usepackage{palatino,eulervm} 
+
+%https://github.com/roverty/LaTeX/tree/main/03-matematica-ciencia
+
+%Nuevos comandos
+
+%\newcommand{\sen}{\mathop{\rm sen}\nolimits} %seno
+%\newcommand{\arcsen}{\mathop{\rm arcsen}\nolimits}
+%\newcommand{\arcsec}{\mathop{\rm arcsec}\nolimits}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\thepage}{}
+
+\parindent=0mm%%%
+\parskip=3mm
+
+\begin{document}
+  
+%\noindent
+\textbf{Ecuaci\'on sencilla en \LaTeX}
+Esta es la forma más sencilla de escribir una ecuaci\'on en \LaTeX sin la
+necesidad de escribir los paquetes en el pre\'ambulo del documento, ya que
+\LaTeX carga este tipo de ecuaciones por defecto
+con los signos de pesos \$...\$ 
+
+La fórmula $ f(x) = y $
+
+Sin embargo, cuando queremos implementar matrices, integrales y s\'imbolos
+matem\'aticos m\'as complejos tendremos que recurrir a los entornos que los
+paquetes matem\'aticos que \LaTeX ofrece.
+Dicho paquetes son: amsmath, amssymb, amsfonts y latexsym.
+
+\section*{1. Potencias, sub\'indices y super\'indices}
+Exponente: $x^p$
+
+Potencia de potencia: $(2^2)^n$
+
+Sub\'indice: $a_n$
+
+Sub\'indice compuesto: $u_{N + 1}$ $a_{n+1}$ $u_{_{N+1}}$ $u_{ij}$
+
+Super\'indice y sub\'indice a la vez: $a_i^j$
+
+Sumatoria: $\sum_{n = 1}^{N}u_n$
+
+Super\'indice compuesto: $x^{n+1}$
+
+Potencia elevada a otra: $2^{2^n}$
+
+Integral: $\int_a^b f(x)\ dx$
+
+
+\section*{2. Tamaño natural}
+
+El comando displaystyle se ocupa para desplegar en tamaño 
+natural, para que éste no s\'olo se ajuste al ancho del rengl\'on \\
+La suma parcial $N-$ésima $S_N$ se define con la igualdad $S_N=\sum_{k=1}^{N} \; a_n$
+La suma parcial $N-$ésima $S_N$ se define con la igualdad $\displaystyle
+S_N=\sum_{k=1}^{N} \; a_n$
+
+
+\section*{3. Fracciones y expresiones de dos niveles}
+\begin{enumerate}
+\setlength\itemsep{1cm}%%%
+\item ${x+1 \over x-1}$
+
+\item $\frac{x+1}{x-1}$
+
+\item $\dfrac{x+1}{x-1}$
+
+\item $\tfrac{x+1}{x-1}$
+
+\item ${{x+1 \over 3} \over x-1}$
+
+\item $\displaystyle{\left( 1+ {1 \over x} \right)^{n+1 \over n}}$
+
+\item $\displaystyle \left( 1+ \frac{1}{x} \right)^\frac{n+1}{n}$
+
+\item $\displaystyle{\left( 1+ {1 \over x} \right)}^{\displaystyle{n+1 \over n}}$
+
+\item ${x+1 \atop x-1}$
+
+\item ${x+1 \above 2pt x-1}$
+
+\item ${x+1 \brace x-1}$
+
+\item ${x+1 \brack x-1}$
+
+\item $\displaystyle{a \stackrel{f}{\rightarrow} b}$
+
+\item $\displaystyle{\lim_{ x \rightarrow 0}} f(x)$
+
+\item $\displaystyle{a \choose b}$
+
+\item $\displaystyle{\sum_{\substack{0<i< m\\0<j<n}}a_ib_j}$
+%Ejercicio
+\item $$ L_{n,k}(x)
+= \prod_{\overset{i=0}{i\neq k}}^{n}\,\frac{x-x_i}{x_k-x_i}
+= \frac{(x-x_0)(x-x_1)\cdots(x-x_{k-1})(x-x_{k+1})\cdots(x-x_n)}{
+(x_k-x_0)\cdots (x_k-x_{k-1})(x_k-x_{k+1})\cdots(x_k-x_n)
+}  $$
+\end{enumerate}
+
+\section*{4.Integrales}
+\begin{enumerate}
+\setlength\itemsep{1cm}
+\item Integral de l\'inea $\displaystyle{\int_C\boldsymbol{F}\cdot\, dr}$
+
+\item Integral cerrada $ \displaystyle{\oint_C\pmb{F}\cdot\, dr} $
+
+\item Integral doble $\displaystyle{{\iint_D f(x,y)\,dA}}$
+
+\item Integral triple $\displaystyle{{\iiint_Q f(x,y,z)\,dA}}$
+\end{enumerate}
+\section*{5. Ra\'ices}
+\begin{enumerate}
+\setlength\itemsep{1cm}
+\item 1. Ra\'iz cuadrada: $\sqrt{x+1}$
+
+\item 2. Ra\'iz compuesta: $ \displaystyle{ \sqrt[n]{x+\sqrt{x}} }$
+
+\item 3. Ra\'iz con diferente indice: $\sqrt[3]{x}$
+
+\item 4. Ra\'z con un conciente dentro: $\sqrt{\frac{x+y}{x-y}}$
+\end{enumerate}
+
+\section*{7. Delimitadores}
+$\displaystyle \left[{x+1 \over (x-1)^2} \right]^n$
+\newline
+Integral con límites: $\int_{a}^{b} \left(x^2+\sin (x)\right)\, dx = \left.
+\dfrac{x^3}{3}-\cos (x)\right|_{a}^{b}$
+
+\section*{Funci\'on a trozos}
+\[f(x)=\left\{ \begin{array}{rcl}
+    x^2+1 & \mbox{si} & x\geq 0\\
+    & & \\
+    \ln|x| & \mbox{si} & x< 0\\
+    \end{array}
+\right. \] % Observe el punto que cierra: \left\{ ... \right.
+    
+\section*{8. Llaves y barras horizontales}
+Leyes de DeMorgan:
+$\displaystyle{ \left\{{ \overline{A \cup B} = \overline{A} \cap
+\overline{B}\atop\overline{A \cap B} = \overline{A}\cup
+\overline{B}}\right.} $ 
+
+\section*{9. Acentos y "sombreros"}
+Vector unitario: $\hat{\imath}$ \\
+Vector: $\bar{p}$ \\
+Acento: $\acute{a}$ \\
+Con flecha: $\vec{p}$ \\
+
+\section*{10 Vectores}
+\begin{enumerate}
+\setlength\itemsep{1cm}
+\item Notación normal de un vector: $\vv{v}$
+\item Vector en may\'uscula: $\vv{A}$
+\item Producto cruz: $\vv{v \times w}$
+\end{enumerate}
+
+
+\section*{11. Negritas}
+
+$\pmb{\cos(x+2\pi)=\cos x}$ \\
+$\cos(x+\pmb{2\pi})=\cos x$
+
+
+
+\section*{12. Espaciado}
+$\int f(x)dx$ \\
+$\displaystyle{\int} f(x)\, dx$
+\section*{13. Centrado}
+\[ ab \leq \left( {a+b \over 2} \right)^2 \]
+\section*{Entorno begin equation}
+\begin{equation} \label{eu_eqn}
+    e^{\pi i} - 1 = 0
+\end{equation}
+\section*{14. Arreglos}
+\[
+A = \left( \begin{array}{lcr}
+a & a+b & k-a \\
+b & b & k-a-b \\
+\vdots & \vdots & \vdots \\
+z & z + z & k-z
+\end{array}
+\right)
+\]
+
+Otra funci\'on a trozos
+\[
+f(x)= \left\{ \begin{array}{lcl}
+x^2 & \mbox{ si } & x<0 \\
+& & \\
+x-1 & \mbox{ si } & x>0
+\end{array}
+\right.
+\]
+
+\section*{15. Matrices}
+
+Matriz simple
+$\bigl( \begin{smallmatrix}
+    a & b \\ c & d
+    \end{smallmatrix} \bigr)$.
+
+Matriz entre corchetes
+
+\begin{equation*}
+    \begin{bmatrix}
+    6 & 8 & 1\\
+    2 & 9 & 3\\
+    4 & 5 & 1
+    \end{bmatrix}
+\end{equation*}
+
+Matriz entre paréntesis
+
+\begin{equation*}
+    \begin{pmatrix}
+    2 & 5 & 0\\
+    7 & 3 & 8\\
+    3 & 0 & 1
+    \end{pmatrix}
+\end{equation*}
+
+Matriz entre barras
+
+\begin{equation*}
+    \begin{vmatrix}
+    2 & 5 & 8\\
+    6 & 7 & 1\\
+    5 & 0 & 3
+    \end{vmatrix}
+\end{equation*}
+
+Matriz entre barras dobles
+\begin{equation*}
+    \begin{Vmatrix}
+    3 & 5 & 0\\
+    2 & 8 & 6\\
+    7 & 1 & 4
+    \end{Vmatrix}
+\end{equation*}
+
+Matriz entre Llaves
+\begin{equation*}
+    \begin{Bmatrix}
+    1 & 7 & 8\\
+    0 & 5 & 7\\
+    9 & 3 & 4
+    \end{Bmatrix}
+\end{equation*}
+Matriz con puntos
+\begin{equation*}
+    \begin{pmatrix}
+    1 & 0 & \cdots & 0\\
+    0 & 1 & \cdots & 0\\
+    \vdots & \vdots & \ddots & \vdots\\
+    0 & 0 & \cdots & 1
+    \end{pmatrix}
+\end{equation*}
+    
+
+\section*{16. Alineamiento}
+Sin numeración 
+\begin{eqnarray*} % Espacio entre filas aumentado \\[0.2cm]
+    \mbox{mcd}(a,b) & = & \mbox{mcd}(a-r_0q,r_0) \\[0.2cm]
+    & = & \mbox{mcd}(r_1,r_0) \\[0.2cm]
+    & = & \mbox{mcd}(r_1,r_0-r_1q_2)\\[0.2cm]
+    & = & \mbox{mcd}(r_1,r_2) \\[0.2cm]
+    & = & \mbox{mcd}(r_1-r_2q_2,r_2)\\[0.2cm]
+\end{eqnarray*}
+Con numeración 
+
+\begin{eqnarray}
+    y=\sqrt[n]{x} &\Longrightarrow &y^n=x \\
+    &\Longrightarrow &n\log\,y=\log\,x;\;\mbox{si}\; x,y>0\\
+    &\Longrightarrow &\log \sqrt[n]{x}={1 \over n}\log \,x
+\end{eqnarray}
+
+Numeración selectiva
+\begin{eqnarray}
+    y=\sqrt[n]{x} &\Longrightarrow &y^n = x \nonumber\\[0.5cm]
+    &\Longrightarrow &n\log \,y=\log\,x,
+    \;\mbox{si}\; x,y>0 \\[0.5cm]
+    &\Longrightarrow &\log \sqrt[n]{x}={1 \over n}\log \,x
+\end{eqnarray}
+
+Align
+
+\begin{align*}
+    \intertext{Agrupamos,}
+    \frac{a+ay+ax+y}{x+y} &= \frac{ax+ay+x+y}{x+y} &\mbox{Agrupar}\\
+    \intertext{sacamos el factor común,}
+    &= \frac{a(x+y)+x+y}{x+y} &\mbox{Factor común}\\
+    &= \frac{(x+y)(a+1)}{x+y} &\mbox{Simplificar}\\
+    &= a+1
+\end{align*}
+
+\section{Nuevos comandos}
+
+Nuevo seno
+$\sen$ \\
+Nuevo angulo cuyo seno
+$\arcsen$ \\ 
+Reales
+$\R$ \\
+Naturales
+$\N$ \\
+Enteros
+$\Z$ \\
+
+\end{document}
