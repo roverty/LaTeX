@@ -1,13 +1,19 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
-\usepackage{graphicx}
-\usepackage{amsmath}
+\documentclass[twocolumn]{article}
+%\documentclass{article}
+
+\usepackage{proteco}
+
 \usepackage{url}
 \usepackage{hyperref}
 
-\graphicspath{{redes-neuronales.assets}}
+%\usepackage[numbers,square]{natbib}
+\usepackage{natbib}
+
+%\bibliographystyle{abbrvnat} %ieee
+
+\bibliographystyle{apalike}
+
+\graphicspath{{redes-neuronales.assets}{latex/assets/}}
 
 \author{Rodrigo Francisco}
 \title{Redes neuronales}
@@ -15,6 +21,8 @@
 
 \begin{document}
 
+%\begin{multicols}{2}
+  %\onecolumn
   \begin{abstract}
     Las redes neuronales artificiales se han coronado como el \textit{estado del
     arte} en la rama de la inteligencia articial, ya que sus aplicaciones se ha
@@ -64,7 +72,7 @@
 
   \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.6\linewidth]{neurona}
+    \includegraphics[width=0.7\linewidth]{neurona}
     \caption{Modelo de una neurona artificial.}
   \end{figure}
 
@@ -85,6 +93,7 @@
     \label{fig:red-neuronal}
   \end{figure}
 
+  \twocolumn
   \section{Machine Learning}
 
   El aprendizaje se logra al comparar los valores de entrada multiplicados por
@@ -152,13 +161,12 @@
   más rápido, comparando los valores de los pesos anteriores y agregando ruido
   aleatorio para sacar los pesos de mínimos locales. Por lo que al final la
   expresión para encontrar los pesos aplicando backpropagation se escribe como
-  se muestra en (wij)
+  se muestra en (wij) \cite{schoolar}
 
-  \begin{thebibliography}{8}
-    \bibitem{savagenotes} Savage, Jesús. \textit{Redes neuronales} en
-    \url{https://biorobotics.fi-p.unam.mx/wp-content/uploads/Courses/
-    reconocimiento\_de\_patrones/2021-2/lecciones/%
-    leccion12\_reconocimiento\_de\_patrones\_2021-2.pdf}
-  \end{thebibliography}
+  \nocite{*}
+
+  \bibliography{referencias}
+
+%\end{multicols}{2}
 
 \end{document}
