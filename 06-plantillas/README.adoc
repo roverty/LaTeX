@@ -1,0 +1,31 @@
+= Paquetes y plantillas
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+toc::[]
+
+* https://www.overleaf.com/learn/latex/Management_in_a_large_project[Management
+in_a largelproject, Overleaf]
+* https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects[Multi file
+Latex project, Overleaf]
+
+== `Include` vs `Input`
+
+* https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include[Include
+vs input, Stack X Change]
