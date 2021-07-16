@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                        Basic packages                  %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{titlesec}                 % Changes the section titles properties
+\usepackage{enumitem}                 % Controls the item position 
+\usepackage{listings}                 % Package for code fences
+\usepackage{xcolor}                   % Create colors
+\usepackage{array}                    % Align fix size columns in tables
+\usepackage{fancyhdr}                 % Configure the header and footer  
+\usepackage[export]{adjustbox}        % Allows to resize tables, and changes
+                                      % image baseline
+\usepackage{marginnote}
+\usepackage{multicol}
+\usepackage{ifthen}                   % Use if and boolean commands
+
+%\usepackage[top=2cm,left=2cm,right=2cm,bottom=3cm,landscape]{geometry}
+\usepackage[total={16cm,24cm},top=2cm,left=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}                  % Math symbols such as semijoin
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                        For TESTING                        %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lipsum}                   % Adds random text
+\usepackage{layout}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                        Code style                         %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  captionpos=b,                    
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  keepspaces=true,                 
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  %
+  tabsize=2
+  % Diplay number to the left
+  % numbers=left,                    
+  % numbersep=5pt,                  
+}
+
+\lstset{style=mystyle,upquote=true}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                        Header Style                       %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy} % Puts some heading style
+\fancyhf{} % Cleaning default header impl
+
+\rhead{
+  \begin{tabular}{r}
+    Proteco \\
+    \LaTeX 2021-2
+  \end{tabular}
+  \includegraphics[height=2\baselineskip,valign=c]{unam-negro}
+}
+
+\lhead{\rightmark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%            Overwriting some variables                  %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parskip=2mm
+\parindent=0em
+\headheight=20mm
+\marginparwidth=2cm
+\marginparsep=7mm
+\setlength{\headsep}{0.2in}           % Changing headsep length
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\columnsep}{9mm}
+%\addtolength{\textwidth}{-18mm}
+
+\decimalpoint%                        % Use dot instead of comma to write 
+
+\titleformat*{\section}{\large\bfseries}  % Change section size
+\renewcommand{\familydefault}{\sfdefault} % Changing font
+
+% Defining column content alignment for fix size columns
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                       My commands                      %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\coverpage}{
+  \thispagestyle{empty}
+  \begin{minipage}[t][5cm][t]{0.2\linewidth}
+    \centering
+    \includegraphics[width=2.5cm]{unam-negro}
+    \newline \newline
+    \vspace{8mm}
+    \rule{2pt}{0.6\textheight}
+    \rule{2pt}{0.6\textheight}
+    \newline
+    \includegraphics[width=2.5cm]{fi-negro}
+  \end{minipage}
+  \begin{minipage}[t]{0.7\linewidth}
+    \vspace{-2.5cm}
+    \LARGE{\textbf{\university}}\\
+    \Large{\textbf{\faculty}} \\
+  
+    \large{\semestre}\\[2cm]
+  
+    \large{\textbf{\materia (\clave)}}\\
+    \large{\textbf{Gpo: \grupo}}\\[5mm]
+    \large{\textbf{Profesor:} \profesor}\\ [1.5cm]
+    \begin{center}
+        \LARGE{\textbf{\titleref}}\\
+    \end{center}
+  
+    \vspace{3.3cm}
+  
+    \large{\textbf{Alumno:} \authorref} \\[1.5cm]
+  
+    \begin{flushright}
+        \dateref
+    \end{flushright}
+  \end{minipage}
+  \newpage
+}
+
+\let\authorref\@author
+\let\titleref\@title
+\let\dateref\@date

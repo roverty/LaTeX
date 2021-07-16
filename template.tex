@@ -1,0 +1,37 @@
+%\documentclass[twoside,a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{article}
+\usepackage{proteco}
+
+\makeatletter
+\author{Rodrigo Francisco} \let\authorref\@author
+\title{Redes Neuronales} \let\titleref\@title
+\date{\today} \let\dateref\@date
+
+\newcommand{\university}{Universidad Nacional Autónoma de México}
+\newcommand{\faculty}{Facultad de Ingeniería}
+\newcommand{\semestre}{2021-1}
+\newcommand{\materia}{BDD}
+\newcommand{\clave}{294}
+\newcommand{\grupo}{1}
+\newcommand{\profesor}{Ing. Rodriguez Campos \textsc{Jorge Alberto}}
+
+\begin{document}
+  %\layout
+  %\maketitle
+  \coverpage%
+  {
+  \parskip = 1mm
+  \tableofcontents
+  }
+  %\begin{abstract}
+    %\lipsum[2]
+  %\end{abstract}
+  \begin{multicols}{2}
+    \section{Primera sección}
+    \lipsum\footnote{\lipsum[1][2]}
+    \marginnote{\rotatebox{270}{\lipsum[1][1]}}[-5cm]
+    \section{Segunda sección}
+    \lipsum[1-4]
+    %\ifthenelse{\boolean{show}}{La bandera esta prendida}{No esta prendida}
+  \end{multicols}
+\end{document}
