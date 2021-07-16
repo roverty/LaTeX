@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{anysize}
+
+\marginsize{1.5cm}{2cm}{1.5cm}{2cm} % {left}{right}{above}{below}
+
+%Definición de colores
+\definecolor{codegreen}{rgb}{1,0,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    %numberstyle=\tiny\color{codegray},
+    %stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,         
+    breaklines=true, %Toma en cuenta los saltos de línea                 
+    captionpos=b, %Imprime el título abajo                                         
+    numbers=left, %Código enumerado                    
+    showtabs=false, %No muestra las tabulaciones                  
+    tabsize=2 % Modificar la tabulación original del código
+}
+
+\parindent=0mm
+
+\lstset{style = mystyle}
+\begin{document}
+
+Vamos a incluir algunas bibliotecas de VHDL
+
+\lstinputlisting[language = VHDL, firstline=1,lastline=3]{Segunda_Parte.vhd}
+
+Después de ello, creamos una entidad
+
+\lstinputlisting[language = VHDL, firstline=4,lastline=8]{Segunda_Parte.vhd}
+
+\end{document}
