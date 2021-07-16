@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{{redes-neuronales.assets}}
+
+\author{Rodrigo Francisco}
+\title{Redes neuronales}
+\date{\today}
+
+\begin{document}
+
+  \begin{abstract}
+    Las redes neuronales artificiales se han coronado como el \textit{estado del
+    arte} en la rama de la inteligencia articial, ya que sus aplicaciones se ha
+    entendido sobre un gran número de subramas de la inteligencia artificial,
+    como la visión por computadora y el procesamiento del lenguaje natural,
+    entre otras cosas, por ello, en este trabajo se presenta un panorama general
+    para entender conceptualmente el funcionamiento de la neuronal artificial y
+    como esta se combina con otras neuronas a fin de formar una red (o capa) de
+    neuronas, cuyo poder de procesamiento en conjunto es mayor que el de una
+    sola.
+  \end{abstract}
+
+  \section{Introducción}
+
+  Las \textit{redes neuronales artificiales} (en inglés, ANN, Artificial Neural
+  Networks) son un modelo simplificado inspirado en el funcionamiento del
+  cerebro humano procesar información. Sus aplicaciones principales suelen estar
+  relacionadas con tareas como el reconocimiento y clasificación de ciertos
+  patrones y esto ha permitido que se puedan crear aplicaciones que van desde el
+  detector de spam en los correos electrónicos, traducción automática,
+  sugerencias personalizadas en sitios web, hasta la visión por
+  computadora.\\
+
+  De acuerdo con (savagenotes) para entender el funcionamiento de las redes
+  neuronales es necesario descomponerlo en su unidad mínima, la
+  \textit{neurona}.  El modelo
+  de la neurona cuenta con varias entradas multiplicadas por ciertos pesos
+  (también conocidos como ponderaciones), están se suman y si la suma es más
+  grande que cierto \textit{umbral}, \(\theta\) (threshold en inglés), la neurona
+  se activa, en caso contrario se encuentra desactivada. De esta manera, las
+  entradas se pueden describir mediante la ecuación (umbral)
+
+
+  Por otra parte, la salida de la neurona es generada por una función de
+  activación no lineal, la cual usualmente es una función \textit{sigmoide}
+  (Otros modelos como el del perceptrón utiliza la función
+  \textit{escalón} como función de activación), tal y como se muestra en la
+  ecuación (eq:sigmoide)
+
+  \[
+    y = f(u) = \dfrac{1}{1+e^{\frac{-u}{T}}}
+  \]
+
+  \section{La neurona}
+
+  La neurona se puede ver, de manera esquemática en la figura (neurona)
+
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{neurona}
+    \caption{Modelo de una neurona artificial.}
+  \end{figure}
+
+  Por lo tanto, al conectar las salidas de una neurona a las entradas de otra se
+  forma una red neuronal.
+
+  Las unidades de procesamiento se organizan en capas. Para (article01) hay
+  tres partes normalmente en una red neuronal: una capa de entrada, con unidades
+  que representan los campos de entrada, que usualmente se obtiene de los datos
+  registrados por sensores para el caso de robots o datasets de imágenes para el
+  caso de visión computacional; una o varias capas ocultas; y una capa de
+  salida, como se aprecia en (fig:red-neuronal)
+
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{red-neuronal}
+    \caption{Modelo de una red neuronal artificial.}
+  \end{figure}
+
+  \section{Machine Learning}
+
+  El aprendizaje se logra al comparar los valores de entrada multiplicados por
+  ciertos pesos que se va ajustando en cada iteración con valores deseados o de
+  salida. Este proceso se repite muchas veces con el objetivo de que la red
+  mejore sus predicciones hasta haber alzado un criterio de parada o error
+  mínimo (online01).
+
+  Las redes neuronales, al ser parte de los algoritmo de aprendizaje de máquina
+  requiere de dos conjuntos de datos pertenecientes a un mismo dataset. El
+  primer conjunto es conocido como conjunto de entrenamiento (\textit{training}),
+  mientras que el otro es conocido como de prueba (\textit{testing}). La red
+  aprende a través del entrenamiento. Continuamente se presentan a la red
+  ejemplos para los que se conoce el resultado, y las respuestas que proporciona
+  se comparan con los resultados conocidos. La información procedente de esta
+  comparación se pasa hacia atrás a través de la red, cambiando los pesos
+  gradualmente.
+
+  \section{Algoritmo de \textit{backpropagation}}
+
+  Para obtener una red neuronal entrenada para cierta tarea se requiere la
+  minimización de error cuadrático medio, el cual simplemente esta dado por la
+  comparación entre los valores \textit{deseados} y los valores
+  \textit{obtenidos} de la red neuronal. Para reducir el error se deben
+  encontrar los pesos optimos, por lo cuál se puede utilizar la expresión
+  (error-01)
+
+
+  De la expresión anterior se entiende que para minimizar el error se obtiene la
+  parcial con respecto a los pesos, para cada de una de las muestras $K$. Además
+  $\delta_{k}^{L}$ representa el error modulado de la muestra $k$ en la capa
+  $L$.  Sin embargo, para la capa $L$ aún no se conocen el error modulado. El
+  error modulado solo se conoce para la última capa (capa de salida). Por lo
+  cual se debe buscar una manera de propagar dicho error y es ahí donde se
+  utiliza el \textbf{algoritmo de backpropagation}.
+
+  Este algoritmo se denomina backpropagation o de propagación inversa debido a
+  que el error se propaga de manera inversa al funcionamiento normal de la red,
+  de esta forma, el algoritmo encuentra el error en el proceso de aprendizaje
+  desde las capas más internas hasta llegar a la entrada; con base en el cálculo
+  de este error se actualizan los pesos de cada capa.
+  (inbook01) explica que este algoritmo es un método de aprendizaje que a
+  su vez utiliza otro método de aprendizaje llamado \textit{gradiente
+  descendente}, por que la expresión para
+  calcula los pesos basados en la iteración anterior se puede escribir como se
+  indica en (eq:w)
+
+  \[
+    w_{ij}^{L}(t+1) = w_{ij}^{L}(t) + \eta
+    \sum_{k=1}^{K}\delta_{jk}^{L}z_{ik}^{L-1}
+  \]
+
+  $w_{ij}^{L}(t+1)$ representan los pesos recalculados para la iteración $t + 1$
+  a partir de una iteración previa. De dicha iteración $t$ ya se conocen el
+  error modulado así como las salidas $z$ obtenidas. En la figura
+  (modelo-neurona) puede ayudar a entender mejor estos conceptos.
+
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{backpropagation}
+    \caption{Modelo de una red neuronal artificial.}
+  \end{figure}
+
+  Finalmente, a la ecuación anterior se le agrega un término para que converja
+  más rápido, comparando los valores de los pesos anteriores y agregando ruido
+  aleatorio para sacar los pesos de mínimos locales. Por lo que al final la
+  expresión para encontrar los pesos aplicando backpropagation se escribe como
+  se muestra en (wij)
+
+
+\end{document}

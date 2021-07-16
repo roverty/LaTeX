@@ -1,0 +1,52 @@
+= Formato avanzado
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 09.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+// Iconos para entorno local
+ifndef::env-github[:icons: font]
+
+// Iconos para entorno github
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+== Recursos
+
+[source,tex]
+----
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  captionpos=b,                    
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  keepspaces=true,                 
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  %
+  tabsize=2
+  % Diplay number to the left
+  % numbers=left,                    
+  % numbersep=5pt,                  
+}
+
+\lstset{style=mystyle,upquote=true}
+----
