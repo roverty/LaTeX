@@ -1,4 +1,4 @@
-= Formato avanzado
+= Clase viernes
 Creado por Rodrigo Francisco <rhodfra@gmail.com>
 Version 1.0, 09.07.2021
 :sectnums: 
