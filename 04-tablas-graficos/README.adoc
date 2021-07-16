@@ -17,12 +17,9 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :warning-caption: :warning:
 endif::[]
-Tikz significa _Tikz is not a Drawing Program_, es una capa de _frontend_ con
-una sintaxis especial que hace el uso de *PGF* más fácil.
-
 
 toc::[]
 
-(tablas mulipágina, combinación de filas y/o columnas, colores en tablas),
-(posicionamiento de tablas e imágenes utilizando figure, wrapfigure)
+//(tablas mulipágina, combinación de filas y/o columnas, colores en tablas),
+//(posicionamiento de tablas e imágenes utilizando figure, wrapfigure)
 
