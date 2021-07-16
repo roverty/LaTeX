@@ -1,13 +1,25 @@
 %\documentclass[twoside,a4paper,12pt]{article}
 \documentclass[a4paper,12pt,twocolumn]{article}
 
+\usepackage{url}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
 \include{datos-alumno}
 \usepackage{proteco}
 
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
-\usepackage{url}
-\usepackage{hyperref}
 
 \graphicspath{{assets/} {redes-neuronales.assets/}{img/}{images/}{latex/assets/}}
 
@@ -86,16 +98,16 @@
   Por lo tanto, al conectar las salidas de una neurona a las entradas de otra se
   forma una red neuronal.
 
-  Las unidades de procesamiento se organizan en capas. Hay tres partes
-  normalmente en una red neuronal: una capa de entrada, con unidades que
-  representan los campos de entrada, que usualmente se obtiene de los datos
+  Las unidades de procesamiento se organizan en capas. Para \cite{article01} hay
+  tres partes normalmente en una red neuronal: una capa de entrada, con unidades
+  que representan los campos de entrada, que usualmente se obtiene de los datos
   registrados por sensores para el caso de robots o datasets de imágenes para el
   caso de visión computacional; una o varias capas ocultas; y una capa de
   salida, como se aprecia en \ref{fig:red-neuronal}
 
   \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.6\linewidth]{red-neuronal}
+    \includegraphics[width=0.8\linewidth]{red-neuronal}
     \caption{Modelo de una red neuronal artificial.}
     \label{fig:red-neuronal}
   \end{figure}
@@ -106,7 +118,7 @@
   ciertos pesos que se va ajustando en cada iteración con valores deseados o de
   salida. Este proceso se repite muchas veces con el objetivo de que la red
   mejore sus predicciones hasta haber alzado un criterio de parada o error
-  mínimo.
+  mínimo \cite{online01}.
 
   Las redes neuronales, al ser parte de los algoritmo de aprendizaje de máquina
   requiere de dos conjuntos de datos pertenecientes a un mismo dataset. El
@@ -145,8 +157,9 @@
   de esta forma, el algoritmo encuentra el error en el proceso de aprendizaje
   desde las capas más internas hasta llegar a la entrada; con base en el cálculo
   de este error se actualizan los pesos de cada capa.
-  Este algoritmo es un método de aprendizaje que a su vez utiliza otro método de
-  aprendizaje llamado \textit{gradiente descendente}, por que la expresión para
+  \cite{inbook01} explica que este algoritmo es un método de aprendizaje que a
+  su vez utiliza otro método de aprendizaje llamado \textit{gradiente
+  descendente}, por que la expresión para
   calcula los pesos basados en la iteración anterior se puede escribir como se
   indica en \ref{eq:w}
 
@@ -162,7 +175,7 @@
 
   \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.7\linewidth]{backpropagation}
+    \includegraphics[width=0.9\linewidth]{backpropagation}
     \caption{Modelo de una red neuronal artificial.}
     \label{fig:modelo-neurona}
   \end{figure}
@@ -174,12 +187,29 @@
   se muestra en \ref{eq:wij}
 
   \begin{equation}
+  \boxed{
   \begin{split}
     w_{ij}^{L}(t+1) = w_{ij}^{L}(t) + \eta
     \sum_{k=1}^{K}\delta_{jk}^{L}z_{ik}^{L-1} + \\
     \mu[w_{ij}^{L}(t) - w_{ij}^{L}(t-1)] + \epsilon_{ij}^{L}(t)
   \end{split}\label{eq:wij}
+  }
   \end{equation}
+
+
+  \mbox{Este es un texto dentro de un mbox} 
+  \makebox[0.8\linewidth][r]{Este texto se encuentra dentro de un makebox}
+
+  \fbox{Este es un texto dentro de un fbox.}
+  \framebox[\linewidth][c]{Aqui hay un texto dentro de un framebox.}
+
+  \parbox{0.5\textwidth}{Este va a ser un texto probablement muy largo y tal
+  vez no quepa en mi framebox.Este va a ser un texto probablement muy largo y
+  tal vez no quepa en mi framebox}
+
+  \colorbox{blue!70}{Este es un texto en una caja de color azul.}
+
+  Hola \hfill Adios
 
   \nocite{*} % Show all Bib-entries
 
