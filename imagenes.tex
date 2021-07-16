@@ -1,0 +1,173 @@
+%----------------------------- PREÁMBULO ----------------------
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{lipsum} %Para insertar texto cualquiera
+\usepackage{graphicx} %Paquete es para figuras (inserción simple)
+\usepackage{wrapfig} %Para poder ocupar el entorno wrapfigure
+\usepackage{subcaption} %Para poder trabajar con subfiguras 
+
+\author{Ana Laura Reynoso}
+\title{Imágenes}
+
+\begin{document}
+	\maketitle
+
+%--------------------------------- Inserción simple -------------------		
+	\section{Inserción simple}
+	Ocupamos el comando \textbf{\textbackslash includegraphics [escala]$\lbrace$ ruta / nombre\_ imagen$\rbrace$} 
+	
+	Es necesario incluir el paquete graphicx en el preámbulo: \textbf{\textbackslash usepackage$\lbrace$graphicx$\rbrace$}
+	
+	\begin{itemize}
+		\item Modificamos el ancho con \textbf{width=200pt}
+		\item Modificamos la altura con \textbf{height=100cm}
+		\item Modificamos la rotación en grados con \textbf{angle=15}
+		\item Con \textbf{scale=n} escalamos \textit{n} veces su tamaño original.  
+	\end{itemize}
+	
+	\subsection{Ejemplo 1}
+	\includegraphics[width=200pt]{img/img1.jpg} %ancho de 200pt
+	
+	\subsection{Ejemplo 2}
+	\includegraphics[height=100pt]{img/img2} % altura de 100pt
+	
+	\subsection{Ejemplo 3}
+	\includegraphics[angle=-90, width=100pt]{img/img4} %ángulo de 90°
+	
+	\subsection{Ejemplo 4}
+	
+	\includegraphics[scale=0.2]{img/img7} %Escalamos a un 0.2
+	
+	
+%---------------------------- ENTORNO FIGURE ----------------------------------
+	\newpage
+	\section{Entorno figure}
+	Del entorno de trabajo se entra y se sale mediante los comandos \textbf{\textbackslash 		begin $\lbrace$figure$\rbrace$[opciones]} y \textbf{\textbackslash end $\lbrace$figure$		\rbrace$}
+	
+	Es necesario incluir el paquete graphicx en el preámbulo: \textbf{\textbackslash 			usepackage$\lbrace$graphicx$\rbrace$} \\
+	
+	Las opciones que se tienen son:
+	\begin{itemize}
+		\item b: colocar la imagen al inicio de la página. 
+		\item t: Colocar la imagen al final de la página.
+		\item h: Intenta colocar la imagen en donde se llama. 
+	\end{itemize}
+	
+	\subsection{Ejemplo 1}
+	\begin{figure}[h]
+		\centering %Centramos la imagen 		
+		\caption{Con entorno figure}
+		\includegraphics[width=100pt]{img/img3_2}
+	\end{figure}
+	
+	\subsection{Ejemplo 2}
+	\begin{figure}[h]		
+		\centering %Centramos la imagen 
+		\includegraphics[width=10cm]{img/img5}
+		\caption{Con entorno figure, lindos gatitos}
+	\end{figure}
+
+
+%------------------------------ Entorno wrapfigure ----------------------------
+	\newpage	
+	\section{Entorno Wrapfigure}
+	Del entorno de trabajo se entra y se sale mediante los comandos
+	
+	 \textbf{\textbackslash begin $\lbrace$wrapfigure$\rbrace$[lineas]$\lbrace$alineación$\rbrace$[overhang]$\lbrace$anchura$\rbrace$} y \textbf{\textbackslash end $\lbrace$wrapfigure$\rbrace$} \\
+	 
+	 Es necesario incluir el paquete graphicx en el preámbulo: \textbf{\textbackslash 			usepackage$\lbrace$graphicx$\rbrace$} 
+	 
+	 Es necesario incluir el paquete wrapfig en el preámbulo: \textbf{\textbackslash 			usepackage$\lbrace$wrapfig$\rbrace$} \\
+	 
+	 A "lineas" nos referimos al número de renglones que van a ser acortados por la imagen. \\
+	 
+	 A ''overhang" nos referimos a que tanto sobresale la imagen del margen (ya sea derecho o izquierdo).
+	 
+	 Opciones de alineación: 
+	 \begin{itemize}
+	 	\item l: Alinear la imagen a la izquierda.
+	 	\item r: Alinear la imagen a la derecha.
+	 	\item i: Alinea la imagen al interior (en libros).
+	 	\item o: Alinea la imagen al exterior (en libros).
+	 \end{itemize}
+	 
+	\subsection{Ejemplo 1}
+		 
+	\section*{Sobre encontrarse a la chica 100\% perfecta una bella mañana de abril}
+	
+	Una bella mañana de abril, en una callecita lateral del elegante barrio de Harajuku en Tokio, me crucé con la chica 100\% perfecta. \\
+
+A decir verdad, no era tan guapa. No sobresalía de ninguna manera. Su ropa no era nada especial. En la nuca su cabello tenía las marcas de recién haber despertado. Tampoco era joven –debía andar alrededor de los treinta, ni si quiera cerca de lo que comúnmente se considera una “chica”. Aún así, a quince metros sé que ella es la chica 100\% perfecta para mí. Desde el momento que la vi algo retumbó en mi pecho y mi boca quedó seca como un desierto. Quizá tú tienes tu propio tipo de chica favorita: digamos, las de tobillos delgados, o grandes ojos, o delicados dedos, o sin tener una buena razón te enloquecen las chicas que se toman su tiempo en terminar su merienda. Yo tengo mis propias preferencias, por supuesto. A veces en un restaurante me descubro mirando a la chica de la mesa de al lado porque me gusta la forma de su nariz. \\
+	
+	\begin{wrapfigure}{r}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.30\textwidth]{img/img5}
+		\caption{alineado a la izquierda}
+	\end{wrapfigure}
+
+Pero nadie puede asegurar que su chica 100\% perfecta corresponde a un tipo preconcebido. Por mucho que me gusten las narices, no puedo recordar la forma de la de ella –ni siquiera si tenía una. Todo lo que puedo recordar de forma segura es que no era una gran belleza. Extraño. \\
+
+Ojalá hubiera hablado con ella. Media hora sería suficiente: sólo para preguntarle acerca de ella misma, contarle algo acerca de mí, y –lo que realmente me gustaría hacer– explicarle las complejidades del destino que nos llevaron a cruzarnos uno con el otro en esa calle en Harajuku en una bella mañana de abril de 1981. Algo que seguro nos llenaría de tibios secretos, como un antiguo reloj construido cuando la paz reinaba en el mundo.
+	
+	
+	\subsection{Ejemplo 2}
+	
+	Durante la mayor parte de los primeros dieciocho años de su vida, George Platen había seguido firmemente el rumbo trazado, que le llevaría a ser un Programador de Computadora Diplo­mado. Entre los chicos de su edad muchos pensaban en la Espacionáutica, la Tecnología de la Refrigeración, el Control de Transportes, e incluso la Administración, demostrando con ello su buen juicio. Pero George tenía su plan trazado, y nada le des­viaba de él.
+
+Discutía los méritos relativos con el mismo entusiasmo que ellos. ¿Por qué no? El Día de la Educación estaba ante ellos como la fecha crucial de su existencia. Se aproximaba con regularidad, tan fijo y cierto como el calendario... el primero de noviembre siguiente a su decimoctavo cumpleaños.
+
+Después de aquel día surgían otros temas de conversación. Se podía comentar con los demás los detalles de la profesión, o las virtudes de la esposa y los hijos, o la suerte del propio equipo de polo espacial, o los triunfos que uno había conseguido en los Juegos Olímpicos. Antes del Día de la Educación, sin embargo, el único tema que acaparaba la atención general era precisamente el de esta importantísima fecha.
+
+	\begin{wrapfigure}{l}[15pt]{0.4\textwidth} %tamaño del entorno
+		\centering
+		\includegraphics[width=0.3\textwidth]{img/img2} %tamaño de la imagen
+		\caption{Alineado a la derecha}
+	\end{wrapfigure}
+
+—¿A qué piensas dedicarte? ¿Crees que lo conseguirás? Bah, eso no es bueno. Mira los registros; han reducido el cupo. Logística, en cambio...
+
+O Hipermecánica... O Comunicaciones... O Gravítica...
+
+Especialmente Gravítica, en aquel momento. Todo el mundo hablaba de Gravítica en los años que antecedieron al Día de la Educación de George, a causa del desarrollo alcanzado por el motor gravítico.
+
+Cualquier mundo situado en un radio inferior a los diez años luz de una estrella enana, según todos decían, hubiera dado cualquier cosa por un Ingeniero Gravítico Diplomado.
+
+Esta idea jamás preocupó a George. Sabía lo que había pasado anteriormente con otra técnica recién creada. Inmediatamente se abrieron las compuertas de la racionalización y la simplificación. Todos los años surgirían nuevos modelos; nuevos tipos de motores gravíticos; nuevos principios. Entonces, todos aquellos caballeros tan solicitados quedarían anticuados, y serían superados por los últimos modelos provistos de la última educación. El primer grupo tendría que dedicarse entonces a trabajos no especializados o em­barcarse para algún mundo atrasado, que aún no estuviese al día.
+
+En la actualidad los Programadores de Computadoras seguían en demanda creciente, a pesar de los años y los siglos transcurridos. Si bien no alcanzaba nunca proporciones monstruosas, pues el mer­cado de los Programadores aún no se hallaba dominado por el frenesí, la demanda aumentaba regularmente, a medida que se abrían nuevos mundos al comercio y los antiguos se hacían más complicados.
+
+Él había discutido constantemente con Stubby Trevelyan sobre este punto. Como suele suceder entre amigos íntimos, sus discusio­nes eran constantes y enconadas y, por supuesto, ninguno convencía al otro ni se dejaba convencer.
+
+Pero Trevelyan tenía un padre que era Metalúrgico Diplomado y había trabajado en uno de los Mundos Exteriores, y un abuelo que también había sido Metalúrgico Diplomado. Él también se propo­nía serlo, para continuar la tradición de la familia, y estaba firme­mente convencido que cualquier otra profesión no sería tan res­petable.
+
+
+%------------------------------------ Subfiguras -----------------------------
+	\newpage
+	\section{Subfiguras}
+	
+	Del entorno de trabajo se entra y se sale mediante los comandos
+	
+	 \textbf{\textbackslash begin $\lbrace$subfigure$\rbrace$[\dots]$\lbrace$anchura$\rbrace$} y \textbf{\textbackslash end $\lbrace$wrapfigure$\rbrace$} \\
+	 
+	Es necesario incluir el paquete graphicx en el preámbulo: \textbf{\textbackslash 			usepackage$\lbrace$graphicx$\rbrace$} 
+	 
+	Es necesario incluir el paquete subcaption en el preámbulo: \textbf{\textbackslash 			usepackage$\lbrace$subcaption$\rbrace$} \\
+	 
+	\subsection{Ejemplo 1}
+	 \begin{figure}[h]
+		\centering
+		\begin{subfigure}{6cm}
+			\includegraphics[width=5cm]{img/img2}
+			\caption{Mi Wero}
+		\end{subfigure}
+		\begin{subfigure}{6cm}
+			\includegraphics[width=6.5cm]{img/img5}
+			\caption{Mi Wero y mi negri}
+		\end{subfigure}
+		\caption{Ejemplo de subfiguras}
+	\end{figure}
+	
+
+\end{document}
