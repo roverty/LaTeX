@@ -23,3 +23,6 @@ toc::[]
 //(tablas mulipágina, combinación de filas y/o columnas, colores en tablas),
 //(posicionamiento de tablas e imágenes utilizando figure, wrapfigure)
 
+== Bibliografía y referencias
+
+* https://en.wikibooks.org/wiki/LaTeX/Tables[Tables, wikibooks]
