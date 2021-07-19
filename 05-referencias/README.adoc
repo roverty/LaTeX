@@ -191,3 +191,7 @@ Management, WikiBooks]
 management in LaTeX, Overleaf]
 //https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib
 //https://www.reed.edu/cis/help/LaTeX/bibtexstyles.html
+* https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib[Bibliography_management_in_LaTeX,
+Overleaf]
+//https://en.wikibooks.org/wiki/LaTeX/Creating_Citations_and_Bibliographies
+//https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
