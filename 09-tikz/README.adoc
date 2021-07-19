@@ -66,7 +66,7 @@ image::paths.png[]
 
 [source,tex]
 ----
-\path[<option>]<specification>
+\path[<option>]<specification>;
 ----
 
 Existen varios tios de _paths_
@@ -148,6 +148,11 @@ image::tikz-examples.gif[]
 
 == Bibliografía y referencias
 
-* https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ[PGF/TikZ]
+* https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ[PGF/TikZ, wikibooks]
 * https://www.overleaf.com/learn/latex/TikZ_package[TikZ_package, Overleaf]
 * https://texample.net/tikz/examples/[Ejemplos de TikZ]
+* https://ctan.org/pkg/pgf?lang=en[pkg, CTAN]
+* http://cremeronline.com/LaTeX/minimaltikz.pdf[Minimal tikz, CTAN (unofficial)]
+* https://mirror.las.iastate.edu/tex-archive/graphics/pgf/base/doc/pgfmanual.pdf[pgfmanual,CTAN
+(official)]
+
