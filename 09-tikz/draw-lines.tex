@@ -103,9 +103,9 @@ Para utilizar curvas de Bezier se utiliza \verb |.. controls() .. ()|
 
 \begin{tikzpicture}
   \draw[step=0.5, gray!40, very thin] (0,0) grid (5,4);
-  \draw [domain=0:5,samples=90] plot (\x, {sqrt(\x)});
   \draw[->, thick,gray] (0,0) -- (0,4);
   \draw[->, thick, gray] (0,0) -- (5,0);
+  \draw [domain=0:5,samples=90] plot (\x, {sqrt(\x)});
   \draw [green, domain=0:2] plot (\x, {4-\x*\x});
   \draw [domain=0:4, blue,samples=50] plot (\x, {1+cos(pi*\x r)});
 \end{tikzpicture}
