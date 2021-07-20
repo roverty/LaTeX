@@ -18,6 +18,6 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-toc::[]
+//toc::[]
 
 * https://www.overleaf.com/learn/latex/Beamer[Beamer,Overleaf]
