@@ -1,4 +1,4 @@
-= Fundamentos para matemáticas y ciencias
+= Tablas y figuras (gŕaficos, imágenes, etc.)
 Creado por Rodrigo Francisco <rhodfra@gmail.com>
 Version 1.0, 09.07.2021
 :sectnums: 
@@ -18,7 +18,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-toc::[]
+//toc::[]
 
 //(tablas mulipágina, combinación de filas y/o columnas, colores en tablas),
 //(posicionamiento de tablas e imágenes utilizando figure, wrapfigure)
